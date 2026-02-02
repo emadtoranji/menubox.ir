@@ -1,16 +1,8 @@
-import { numberToFarsi } from '@utils/numbers';
+import FooterMessageYear from './FooterMessageYear';
+
 import Link from 'next/link';
 
-export default function Footer({ t, currentLang }) {
-  let thisYear;
-  if (currentLang === 'fa') {
-    thisYear = new Date().toLocaleDateString('fa-IR-u-ca-persian', {
-      year: 'numeric',
-    });
-  } else {
-    thisYear = new Date().getFullYear();
-  }
-  thisYear = numberToFarsi(thisYear, currentLang);
+export default async function Footer({ t, currentLang }) {
   return (
     <footer id='footer' className='mt-auto pt-4 pb-3 text-center'>
       <div className='container'>
@@ -66,7 +58,7 @@ export default function Footer({ t, currentLang }) {
 
         <div className='row gy-3 align-items-center text-center'>
           <div className='col-12'>
-            <p className='mb-0 small'>{t('footer.copy', { year: thisYear })}</p>
+            <FooterMessageYear />
           </div>
         </div>
 

@@ -1,10 +1,11 @@
 {
   "name": "menubox.ir",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "scripts": {
     "dev": "next dev --port 4501",
-    "build": "next build",
+    "build": "npm run generate && next build",
+    "generate": "npx prisma generate",
     "install-omit-dev": "npm install --omit=dev",
     "start": "node server.js",
     "lint": "eslint",

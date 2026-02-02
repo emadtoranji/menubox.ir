@@ -11,7 +11,10 @@ const limited = withRateLimit({
 export const GET = limited(async (req) => {
   const { searchParams } = new URL(req.url);
 
-  if (searchParams.get('token') !== CRONJOB_TOKEN) {
+  if (
+    searchParams.get('token') !== CRON_SECRET ||
+    req.headers.get('Authorization') !== `Bearer ${process.env.CRON_SECRET}`
+  ) {
     return HandleResponse(methodAccessDeniedResponse);
   }
 

@@ -64,6 +64,6 @@ export const allGateways = [
   },
 ];
 
-export const CRONJOB_TOKEN = process.env.CRONJOB_TOKEN;
+export const CRON_SECRET = process.env.CRON_SECRET;
 
 export const CLEAR_CACHE_VERSION = process.env.NEXT_PUBLIC_CLEAR_CACHE_VERSION;

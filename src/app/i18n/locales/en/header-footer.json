@@ -1,0 +1,41 @@
+{
+  "footer": {
+    "brand": "Box Menu",
+    "description": "A platform for managing stores and digitizing catalogs and products.",
+    "quick_links": {
+      "title": "Quick Links",
+      "features": "Features",
+      "store": "Store",
+      "dashboard": "Account",
+      "support": "Support",
+      "pricing": "Pricing",
+      "docs": "Documentation",
+      "contact": "Contact Us"
+    },
+    "language": {
+      "title": "Change Language"
+    },
+    "copy": "© {{year}} Box Menu — Made for you with love and creativity ❤️",
+    "terms": "Terms of Use",
+    "privacy": "Privacy",
+    "cookies": "Cookies"
+  },
+  "nav": {
+    "home": "Home",
+    "dashboard": "Dashboard",
+    "overview": "Overview",
+    "store": "Store",
+    "my-store": "My Stores",
+    "finance": "Finance",
+    "services": "Services",
+    "setting": "Settings",
+    "visit-site": "Home",
+    "support": "Support",
+    "signin": "Login",
+    "admin": "Admin Panel",
+    "admin-section": {
+      "manage-users": "Manage Users"
+    },
+    "signout": "Sign Out"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "paths": {
+      "@/*": ["./*"],
+      "@src/*": ["./src/*"],
+      "@database/*": ["./src/database/*"],
+      "@components/*": ["./src/components/*"],
+      "@lib/*": ["./src/lib/*"],
+      "@server/*": ["./src/server/*"],
+      "@utils/*": ["./src/utils/*"],
+      "@providers/*": ["./src/providers/*"],
+      "@styles/*": ["./public/styles/*"],
+      "@images/*": ["./public/images/*"],
+      "@i18n/*": ["./src/app/i18n/*"],
+      "@api/*": ["./src/app/api/*"],
+      "@app/*": ["./src/app/*"]
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "payment": {
+    "invalid_gateway": "Invalid payment gateway",
+    "missing_parameters": "Payment parameters missing",
+    "unknown_problem": "An unknown problem occurred",
+    "status": "Payment status",
+    "success": "Payment successful",
+    "unknown": "Unknown status",
+    "failed": "Payment failed",
+    "order_id": "Order ID",
+    "amount": "Amount",
+    "transaction_ref": "Transaction ID",
+    "statuses": {
+      "failed": "Failed",
+      "pending": "Pending",
+      "success": "Successful",
+      "refunded": "Refunded",
+      "expired": "Expired",
+      "rejected": "Rejected",
+      "checking": "Checking"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "general": {
+    "search-placeholder": "جستجو",
+    "edit": "ویرایش",
+    "save": "ذخیره",
+    "cancel": "کنسل"
+  },
+  "manage-users": {
+    "id": "آیدی کاربر",
+    "username": "نام کاربری",
+    "balance": "موجودی اصلی",
+    "email": "ایمیل",
+    "accessibility": "سطح دسترسی",
+    "status": "وضعیت",
+    "change-balance": "تغییر موجودی (با موجودی اصلی کاربر جمع میشود)"
+  }
+}

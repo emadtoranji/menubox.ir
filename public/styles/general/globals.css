@@ -1,0 +1,135 @@
+:root {
+  --header-height: 66px;
+  --font-family: 'sans-serif';
+}
+
+html,
+body {
+  font-family: var(--font-family) !important;
+  scroll-behavior: smooth;
+  scroll-padding-top: 50px;
+  line-height: 1.7;
+}
+
+.main-vh-100 {
+  height: calc(100vh - var(--header-height));
+}
+
+.dir-ltr {
+  direction: ltr !important;
+}
+
+.dir-rtl {
+  direction: rtl !important;
+}
+
+a {
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
+.text-justify {
+  text-align: justify !important;
+}
+
+.cursor-pointer {
+  cursor: pointer !important;
+}
+
+input[type='password']::-ms-reveal,
+input[type='password']::-webkit-credentials-auto-fill-button {
+  display: none;
+}
+
+select:focus,
+input:focus {
+  box-shadow: none !important;
+}
+
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type='number'] {
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+
+.opacity-10 {
+  opacity: 0.1 !important;
+}
+
+.opacity-80 {
+  opacity: 0.8 !important;
+}
+
+.opacity-90 {
+  opacity: 0.9 !important;
+}
+
+.bg-cover {
+  background-size: cover;
+}
+
+.bg-center {
+  background-position: center;
+}
+
+.hide-scrollbar {
+  overflow: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+body::-webkit-scrollbar {
+  width: 0.8rem !important;
+}
+
+@media (max-width: 768px) {
+  body::-webkit-scrollbar {
+    width: 0.7rem !important;
+  }
+}
+@media (max-width: 576px) {
+  body::-webkit-scrollbar {
+    width: 0.6rem !important;
+  }
+}
+
+body::-webkit-scrollbar-track {
+  background-color: var(--color-white) !important;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--color-bg-nav) !important;
+}
+
+.text-ellipsis {
+  display: -webkit-box;
+  line-clamp: 10;
+  -webkit-line-clamp: 10;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-word;
+}
+
+.navbar-toggler,
+.navbar-toggler:focus,
+.navbar-toggler:active {
+  border: 1px rgb(255, 255, 255, 0.25) solid !important;
+  box-shadow: inherit !important;
+  outline: inherit !important;
+}
+
+.blurred {
+  filter: blur(6px);
+  -webkit-filter: blur(6px);
+  user-select: none;
+}

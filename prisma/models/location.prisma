@@ -1,0 +1,19 @@
+model Location {
+  id String @id @default(uuid()) @db.Uuid
+
+  countrySlug  String @db.VarChar(64)
+  countryEn    String @db.VarChar(64)
+  countryLocal String @db.VarChar(64)
+
+  provinceSlug  String @db.VarChar(64)
+  provinceEn    String @db.VarChar(64)
+  provinceLocal String @db.VarChar(64)
+
+  isActive Boolean @default(true)
+
+  stores Store[]
+
+  @@unique([countrySlug, provinceSlug])
+  @@index([countrySlug])
+  @@index([provinceSlug])
+}

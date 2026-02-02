@@ -1,0 +1,75 @@
+{
+  "general": {
+    "title": "{{AppName}} — پلتفرم جامع مدیریت فروشگاه‌ها",
+    "description": "پلتفرم جامع مدیریت فروشگاه‌ها و دیجیتال‌سازی کاتالوگ‌ها و محصولات | {{AppName}}",
+    "keywords": [
+      "پلتفرم",
+      "مدیریت فروشگاه‌",
+      "دیجیتال‌",
+      "دیجیتال‌سازی",
+      "کاتالوگ‌",
+      "محصولات",
+      "فروشگاه",
+      "کافه",
+      "رستوران",
+      "ماشین فود",
+      "فست فود"
+    ],
+    "category": "A Platform for Managing Stores"
+  },
+  "payment": {
+    "title": "پرداخت | {{AppName}}",
+    "description": "خرید اعتبار و پلن‌های اشتراکی برای استفاده از خدمات بیشتر {{AppName}} با درگاه پرداخت امن و شارژ آنی",
+    "keywords": [
+      "خرید اعتبار {{AppName}}",
+      "پلن اشتراکی",
+      "شارژ حساب {{AppName}}"
+    ],
+    "category": "Payment and Subscription Plans"
+  },
+  "admin": {
+    "title": "پنل مدیریت | {{AppName}}",
+    "description": "پنل مدیریت اختصاصی {{AppName}} — دسترسی فقط برای مدیران سیستم",
+    "keywords": ["پنل مدیریت", "ادمین {{AppName}}"],
+    "category": "Admin Panel"
+  },
+  "dashboard": {
+    "title": "داشبورد کاربری | {{AppName}}",
+    "description": "داشبورد شخصی کاربران {{AppName}} — مشاهده تاریخچه تراکنش‌ها، مدیریت فروشگاه و تنظیمات حساب",
+    "keywords": [
+      "داشبورد {{AppName}}",
+      "پنل کاربری",
+      "تاریخچه تراکنش",
+      "مدیریت فروشگاه"
+    ],
+    "category": "User Dashboard"
+  },
+  "verify-email": {
+    "title": "تایید ایمیل | {{AppName}}",
+    "description": "صفحه تایید آدرس ایمیل برای فعال‌سازی حساب کاربری در {{AppName}}",
+    "keywords": ["تایید ایمیل", "فعال سازی حساب {{AppName}}"],
+    "category": "Email Verification"
+  },
+  "signin": {
+    "title": "ورود به حساب | {{AppName}}",
+    "description": "ورود امن به حساب کاربری {{AppName}} و دسترسی به داشبورد و فروشگاه ها",
+    "keywords": ["ورود {{AppName}}", "لاگین {{AppName}}", "ورود به پنل کاربری"],
+    "category": "User Login"
+  },
+  "reset-password": {
+    "title": "بازیابی رمز عبور | {{AppName}}",
+    "description": "بازیابی و تنظیم مجدد رمز عبور حساب کاربری در پلتفرم {{AppName}}",
+    "keywords": [
+      "بازیابی رمز عبور",
+      "فراموشی رمز عبور {{AppName}}",
+      "تغییر پسورد"
+    ],
+    "category": "Password Reset"
+  },
+  "not-found": {
+    "title": "۴۰۴ - صفحه یافت نشد | {{AppName}}",
+    "description": "صفحه مورد نظر شما یافت نشد. ممکن است آدرس اشتباه باشد یا صفحه حذف شده باشد.",
+    "keywords": ["404", "صفحه یافت نشد", "خطای 404 {{AppName}}"],
+    "category": "Error Page"
+  }
+}

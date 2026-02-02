@@ -1,0 +1,112 @@
+enum UserAccessibility {
+  user
+  tester
+  admin
+  developer
+}
+
+enum UserStatus {
+  active
+  inactive
+  banned
+}
+
+enum PaymentStatus {
+  pending
+  need_more_time
+  success
+  failed
+  canceled
+  partially_paid
+  refunded_by_gateway
+  expired
+}
+
+enum WalletTransactionType {
+  deposit
+  withdraw
+  admin_adjust
+  api_usage
+  refund
+}
+
+enum ValidCurrency {
+  irt
+  irr
+  usd
+  eur
+}
+
+enum WalletTransactionReferenceType {
+  payment
+  manual
+  system
+  user_request
+  refund
+}
+
+enum StoreCategoriesKey {
+  restaurant
+  cafe
+  fastfood
+  foodtruck
+}
+
+enum StoreItemsCategoriesKey {
+  iranian
+  kebab
+  stew
+  foreign
+  italian
+  pizza
+  pasta
+  burger
+  sandwich
+  asian
+  japanese
+  chinese
+  thai
+  korean
+  seafood
+  breakfast
+  appetizer
+  salad
+  sideDish
+  drink
+  hotDrink
+  coldDrink
+  coffee
+  tea
+  smoothie
+  milkshake
+  juice
+  mocktail
+  dessert
+  cake
+  iceCream
+}
+
+
+
+enum StoreServiceType {
+  dine_in
+  takeawya
+  delivery
+  customery_choose
+}
+
+enum StoreTranslationEntity {
+  store
+  category
+  item
+  option
+  option_value
+}
+
+enum StoreExplorerSource {
+  explorer
+  telegram
+  nfc
+  camera
+  unknown
+}

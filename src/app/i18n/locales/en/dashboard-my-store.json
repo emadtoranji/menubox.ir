@@ -1,0 +1,130 @@
+{
+  "key-names": {
+    "name": "Store name",
+    "slug": "Store URL (to be displayed in the website address - English only)",
+    "description": "Store description (brief description)",
+    "categories": "What category is your store in?",
+    "country": "Is your store in a country?",
+    "province": "What province is your store in?",
+    "address": "Enter the store address without writing the country and province",
+    "phone": "Enter the store's phone number. (without prefix)",
+    "currency": "In what currency are your store prices written?",
+    "tax-enabled": "Does your store charge taxes?",
+    "tax-enabled-yes": "Yes, we charge taxes",
+    "tax-enabled-no": "No, we are tax-exempt",
+    "tax-included": "Is tax included in the price? Or should it be calculated and displayed separately?",
+    "tax-included-yes": "Yes, the price listed includes Tax is also included",
+    "tax-included-no": "No, the price listed does not include tax; it should be calculated and written separately",
+    "tax-percent": "How much tax percentage do you charge?",
+    "created-at": "Date the store was created",
+    "updated-at": "Date the store was last updated"
+  },
+  "delete": {
+    "title": "Delete restaurant/cafe",
+    "subtitle": "You can delete your store in this section",
+
+    "delete-description": "<p>Are you sure you want to delete the store '<b>{{name}}</b>'?</p>\n<p>By deleting the store, <strong>all products, customer information, store route, tables, barcodes, and related settings</strong> will be permanently deleted.</p>\n<p><strong>This action is irreversible</strong> and there is no way to recover the data after deletion.</p>\n<p>Please make sure of your decision before continuing.</p>",
+    "delete-sure-button": "I want to delete the entire store",
+    "delete-rejected-button": "I regret it",
+    "store-deleted": "Store successfully deleted"
+  },
+  "my-store": "My stores",
+  "my-store-description": "In this section you can view and edit all your stores",
+  "add-store": "Register a new store",
+  "no-store-found": "No stores were found; by clicking on this text, you can register a new store.",
+  "edit-button": "Edit",
+  "save-button": "Save",
+  "delete-button": "Delete",
+  "user-experience-button": "User Experience",
+  "new": {
+    "title": "Register a new restaurant/cafe",
+    "subtitle": "In this section you can register your new store",
+    "submit-button": "Register a store",
+    "inserted-successfully": "Your store has been successfully registered"
+  },
+  "edit": {
+    "title": "Edit Restaurant/Cafe",
+    "subtitle": "In this section you can edit the desired store",
+
+    "update-button": "Edit Store",
+    "updated-successfully": "Your store has been successfully edited",
+    "deleted-successfully": "Successfully deleted",
+
+    "there-is-no-changes": "You have not made any changes",
+    "sections": {
+      "general": {
+        "title": "General",
+        "description": "In this section you can edit the general settings of the store such as name, route, logo, address, etc."
+      },
+      "delete": {
+        "title": "Delete",
+        "description": "In this section you can completely delete your store."
+      },
+      "items": {
+        "title": "Products (items)",
+        "description": "In this section you can add the products and products you want to add to your store.",
+        "add-item": "Add product",
+        "delete-item": "Delete product",
+        "delete-item-sure": "Delete product (cannot be returned if clicked again)",
+        "save-item": "Save product",
+        "isAvailable": "Available",
+        "isNotAvailable": "Not available",
+        "active": "Active",
+        "deactive": "Inactive",
+        "required": "Required",
+        "optional": "Optional",
+        "item-category-title": "Product category",
+        "item-title": "Product title",
+        "item-description": "Product description (ingredients)",
+        "item-price": "Product price",
+        "options-title": "Options (for example, you can add multiple drink sizes)",
+        "options-samples-idea": [
+          "In the drink category you can register small, medium and large sizes",
+          "In the sandwich category you can set toppings, for example mushrooms, cheese, peppers",
+          "In most categories you can add a disposable fork and spoon option"
+        ],
+        "option-new": "Add option",
+        "option-delete": "Delete option",
+        "item-discount-percnet": "Product discount percentage",
+        "item-option-title": "Option title",
+        "item-option-minimum": "Minimum",
+        "item-option-maximum": "Maximum",
+        "item-option-change-price-percent": "Price increase (percentage)",
+        "item-option-value": "Option values",
+        "item-option-enable-title": "What is the status of this option?",
+        "item-option-count-title": "Is this option single or can it have multiples?",
+        "item-option-count-one": "Only one allowed is",
+        "item-option-count-multi": "More than one is allowed",
+        "item-option-required-title": "Is selecting this option mandatory or optional?"
+      },
+      "tables": {
+        "title": "Tables",
+        "description": "In this section you can customize the tables of your restaurant/cafe.",
+        "new-table-button": "Add new table",
+        "table-name-title": "Table name (e.g. table number 1)",
+        "is-active": "Table is active",
+        "is-deactive": "Table is inactive",
+        "save-table": "Save table",
+        "downloadQrCode": "Download barcode",
+        "generateQrCode": "Generate barcode",
+        "confirm-delete": "Are you sure you want to delete this table?",
+        "deleted-successfully": "Table was successfully deleted",
+        "delete-table": "Delete table",
+        "table-name-duplicate": "Table name cannot be duplicate"
+      },
+      "working-hour": {
+        "title": "Working hours",
+        "description": "In this section you can specify the working hours of your store.",
+        "closed": "Closed",
+        "24-hour": "24 hours",
+        "custom-hour": "Custom hour",
+        "start-time": "Start time",
+        "end-time": "End time",
+        "store-is-closed-in-this-day": "Store is closed on this day.",
+        "store-is-24-hour-open": "Store is open 24 hours on this day."
+      }
+    },
+    "open-section": "Login"
+  },
+  "store-not-found": "Store not found"
+}

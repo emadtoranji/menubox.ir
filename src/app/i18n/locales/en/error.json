@@ -1,0 +1,14 @@
+{
+  "notFound": {
+    "title": "Oops! The page you were looking for was not found",
+    "button": "Back to home"
+  },
+  "forbidden": {
+    "title": "Access to this page is not allowed",
+    "button": "Back to home"
+  },
+  "error": {
+    "title": "Oops! Something went wrong",
+    "button": "Back to home"
+  }
+}

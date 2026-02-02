@@ -1,0 +1,23 @@
+{
+  "payment": {
+    "invalid_gateway": "درگاه پرداخت نامعتبر",
+    "missing_parameters": "پارامترهای پرداخت موجود نیست",
+    "unknown_problem": "یک مشکل ناشناخته رخ داد",
+    "status": "وضعیت پرداخت",
+    "success": "پرداخت موفق",
+    "unknown": "وضعیت نامشخص",
+    "failed": "پرداخت ناموفق",
+    "order_id": "شناسه سفارش",
+    "amount": "مبلغ",
+    "transaction_ref": "شناسه تراکنش",
+    "statuses": {
+      "failed": "ناموفق",
+      "pending": "درانتظار",
+      "success": "موفق",
+      "refunded": "عودت داده شده",
+      "expired": "منقضی شده",
+      "rejected": "رد شده",
+      "checking": "درحال بررسی"
+    }
+  }
+}

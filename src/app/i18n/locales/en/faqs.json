@@ -1,0 +1,10 @@
+{
+  "faqTitle": "Frequently Asked Questions",
+  "noFaqsFound": "There are no items to display.",
+  "faqs": [
+    {
+      "q": "How can I top up my account?",
+      "a": "You can top up your account with cryptocurrency (like Bitcoin or Tether) or via a Rial gateway. Whichever suits you best!"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+model StoreCategory {
+  id       Int           @id @default(autoincrement())
+  storeId  String        @db.Uuid
+  key      StoreCategoriesKey
+
+  store    Store         @relation(fields: [storeId], references: [id], onDelete: Cascade)
+
+  @@unique([storeId, key])
+  @@index([storeId])
+}

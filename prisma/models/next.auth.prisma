@@ -1,0 +1,54 @@
+model Account {
+  userId            String @db.Uuid
+  type              String @db.VarChar(255)
+  provider          String @db.VarChar(255)
+  providerAccountId String @db.VarChar(255)
+
+  refresh_token String? @db.VarChar(255)
+  access_token  String?
+  expires_at    Int?
+  token_type    String? @db.VarChar(255)
+  scope         String? @db.VarChar(255)
+  id_token      String? @db.VarChar(2048)
+  session_state String? @db.VarChar(255)
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@id([provider, providerAccountId])
+  @@map("nextauth_accounts")
+}
+
+model Session {
+  sessionToken String   @id @db.VarChar(255)
+  userId       String   @db.Uuid
+  expires      DateTime
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("nextauth_session")
+}
+
+model VerificationToken {
+  identifier String   @id @db.VarChar(255)
+  token      String   @db.VarChar(255)
+  expires    DateTime
+
+  @@map("nextauth_verificationToken")
+}
+
+model Authenticator {
+  credentialID         String  @db.VarChar(255)
+  userId               String  @db.Uuid
+  providerAccountId    String  @db.VarChar(255)
+  credentialPublicKey  String  @db.VarChar(255)
+  counter              Int
+  credentialDeviceType String  @db.VarChar(255)
+  credentialBackedUp   Boolean
+  transports           String? @db.VarChar(255)
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@id([userId, credentialID])
+  @@unique([credentialID])
+  @@map("authenticator")
+}

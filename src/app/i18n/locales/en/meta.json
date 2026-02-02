@@ -1,0 +1,79 @@
+{
+  "general": {
+    "title": "{{AppName}} — A Platform for Managing Stores",
+    "description": "A platform for managing stores and digitizing catalogs and products. | {{AppName}}",
+    "keywords": [
+      "platform",
+      "managing stores",
+      "digital",
+      "digitizing",
+      "catalogs",
+      "products",
+      "store",
+      "cafe",
+      "restaurant",
+      "food truck",
+      "fast food"
+    ],
+    "category": "A Platform for Managing Stores"
+  },
+  "payment": {
+    "title": "Payment | {{AppName}}",
+    "description": "Buy credit and subscription plans to use {{AppName}} options with secure payment gateway and instant recharge",
+    "keywords": [
+      "Buy credit {{AppName}}",
+      "Subscription Plan",
+      "{{AppName}} Account Charging"
+    ],
+    "category": "Payment and Subscription Plans"
+  },
+  "admin": {
+    "title": "Admin Panel | {{AppName}}",
+    "description": "Special Admin Panel {{AppName}} — Access for System Administrators Only",
+    "keywords": ["Admin Panel", "{{AppName}} Admin"],
+    "category": "Admin Panel"
+  },
+  "dashboard": {
+    "title": "User Dashboard | {{AppName}}",
+    "description": "Personal Dashboard for {{AppName}} Users — View Transaction History, Store Management, and Account Settings",
+    "keywords": [
+      "Dashboard {{AppName}}",
+      "User Panel",
+      "Transaction History",
+      "Store Management"
+    ],
+    "category": "User Dashboard"
+  },
+  "verify-email": {
+    "title": "Email Verification | {{AppName}}",
+    "description": "Email address verification page for activating a user account in {{AppName}}",
+    "keywords": ["Email verification", "Activate {{AppName}} account"],
+    "category": "Email Verification"
+  },
+  "signin": {
+    "title": "Login to account | {{AppName}}",
+    "description": "Secure login to {{AppName}} user account and access the dashboard and store management",
+    "keywords": [
+      "{{AppName}} login",
+      "{{AppName}} login",
+      "Login to user panel"
+    ],
+    "category": "User Login"
+  },
+  "reset-password": {
+    "title": "Recover password | {{AppName}}",
+    "description": "Recover and reset the user account password on the {{AppName}} platform",
+    "keywords": [
+      "Recover password",
+      "Forgot password {{AppName}}",
+      "Change password"
+    ],
+    "category": "Password Reset"
+  },
+  "not-found": {
+    "title": "404 - Page Not Found | {{AppName}}",
+    "description": "The page you are looking for could not be found. The address may be incorrect or the page may have been deleted.",
+    "keywords": ["404", "Page Not Found", "404 Error {{AppName}}"],
+    "category": "Error Page"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "general": {
+    "search-placeholder": "Search",
+    "edit": "Edit",
+    "save": "Save",
+    "cancel": "Cancel"
+  },
+  "manage-users": {
+    "id": "User ID",
+    "username": "Username",
+    "balance": "Main balance",
+    "email": "Email",
+    "accessibility": "Accessibility level",
+    "status": "Status",
+    "change-balance": "Change balance (adds to user's main balance)"
+  }
+}

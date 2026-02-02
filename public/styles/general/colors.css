@@ -1,0 +1,77 @@
+:root {
+  --color-white: #fff;
+  --color-purple: rgb(86, 3, 86);
+  /* main colors */
+  --color-bg-main: #e7cbcb;
+  --color-text-main: #643843;
+
+  --color-bg-sub: var(--color-white);
+  --color-text-sub: #6e0a82;
+
+  --color-bg-nav: var(--color-purple);
+  --color-text-nav: var(--color-white);
+
+  /* gradiant */
+
+  /* z-index */
+  --zindex-loader: 9999999;
+  --zindex-modal-backdrop: 1050 !important;
+  --zindex-modal: 1055 !important;
+  --zindex-footer: 1000 !important;
+  --zindex-nav: 1000 !important;
+}
+
+html,
+body,
+main {
+  background-color: var(--color-bg-main) !important;
+  color: var(--color-text-main) !important;
+}
+
+.bg-purple {
+  background-color: var(--bs-purple) !important;
+  color: var(--color-white) !important;
+}
+
+.btn-active {
+  background-color: var(--bs-purple) !important;
+  color: var(--color-white) !important;
+  border: 1px solid var(--bs-purple) !important;
+}
+
+.btn-inactive {
+  background-color: var(--color-white) !important;
+  color: var(--color-purple) !important;
+  border: 1px solid var(--bs-purple) !important;
+}
+
+.card {
+  background-color: var(--color-bg-sub) !important;
+  color: var(--color-text-sub) !important;
+}
+
+footer,
+.navbar {
+  background-color: var(--color-bg-nav) !important;
+  color: var(--color-text-nav) !important;
+}
+
+.store-categories {
+  background-color: var(--color-bg-nav) !important;
+  color: var(--color-text-nav) !important;
+}
+
+.modal-backdrop {
+  z-index: var(--zindex-modal-backdrop) !important;
+}
+.modal {
+  z-index: var(--zindex-modal) !important;
+}
+
+.navbar {
+  z-index: var(--zindex-nav) !important;
+}
+
+footer {
+  z-index: var(--zindex-footer) !important;
+}

@@ -1,0 +1,12 @@
+{
+  "html": {
+    "subject": "Verify Email Address",
+    "description": "To verify your email address, please click the button below.",
+    "button-title": "Verify Email",
+    "expire-time": "This link is only valid for 3 hours.",
+    "if-its-not-you": "If this request was not sent by you, please ignore this email."
+  },
+  "link-expired": "The email verification link has expired",
+  "email-verified": "Your email has been successfully verified",
+  "button-title": "Account"
+}

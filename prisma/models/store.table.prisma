@@ -1,0 +1,17 @@
+model StoreTable {
+  id        Int    @id @default(autoincrement())
+  storeId        String @db.Uuid
+
+  title          String @db.VarChar(32)
+
+  isActive       Boolean @default(true)
+
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  scanLogs StoreExplorerLog[]
+
+  store Store @relation(fields: [storeId], references: [id], onDelete: Cascade)
+
+  @@unique([storeId, title])
+}

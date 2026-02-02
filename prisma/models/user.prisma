@@ -1,0 +1,27 @@
+model User {
+  id            String            @id @default(uuid()) @db.Uuid
+  email         String            @unique @db.VarChar(191)
+  emailVerified Boolean           @default(false)
+  username      String?           @unique @db.VarChar(64)
+  passwordHash  String?           @db.VarChar(255)
+  balance       Decimal           @default(0.0) @db.Decimal(18, 6)
+  currency      ValidCurrency     @default(irt)
+  accessibility UserAccessibility @default(user)
+  status        UserStatus        @default(active)
+
+  createdAt DateTime @default(now())
+  lastLogin DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  accounts            Account[]
+  sessions            Session[]
+  authenticators      Authenticator[]
+  payments            Payment[]
+  walletTxs           WalletTransaction[]
+  stores              Store[]
+  storeItem           StoreItem[]
+  storeItemOption     StoreItemOption[]
+  StoreExplorers      StoreExplorerLog[]
+
+  performedTxs WalletTransaction[] @relation("PerformedBy")
+}

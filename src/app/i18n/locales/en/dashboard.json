@@ -1,0 +1,104 @@
+{
+  "dashboard": {
+    "login": {
+      "login-success": "You have successfully logged in",
+      "title": "Box Menu - Store Management",
+      "email": "Email",
+      "email-placeholder": "Enter your email",
+      "password": "Password",
+      "password-verify": "Confirm password",
+      "password-placeholder": "Enter your password",
+      "return-to-sign-in": "Do you have an account? Click",
+      "sign-in-button": "Login",
+      "sign-up-button": "Register",
+      "password-verify-placeholder": "Enter password confirmation",
+      "passwords-do-not-match": "Password and password confirmation do not match"
+    },
+
+    "overview": {
+      "title": "Account overview",
+      "subtitle": "Summary of your store visits and openings"
+    },
+    "stats": {
+      "today": "today",
+      "yesterday": "yesterday",
+      "currentMonth": "Current month",
+      "previousMonth": "Previous month",
+      "currentYear": "Current year",
+      "previousYear": "Previous year",
+      "all": "All"
+    },
+
+    "account": {
+      "title": "Account management",
+      "profile": "User information",
+      "security": "Security and password",
+      "save": "Save changes",
+      "updated": "Information updated successfully.",
+      "email": "Email",
+      "email-do-verify": "Click to verify",
+      "email-verified": "Verified",
+      "username": "Username",
+      "usernameEmpty": "Username cannot be empty",
+      "usernameInvalid": "Username must start with a letter and contain only letters and numbers",
+      "fixErrors": "Please fix errors before saving",
+      "oldPasswordEmpty": "Fill in current password",
+      "passwordEmpty": "Fill in password",
+      "oldPassword": "Current password",
+      "newPassword": "New password",
+      "confirmNewPassword": "Confirm new password",
+      "changePassword": "Change password",
+      "passwordChanged": "Password changed successfully."
+    },
+    "bank-accounts": {
+      "account-number": "Account number"
+    },
+    "finance": {
+      "title": "Financial Management (Deposit and Withdrawal)",
+      "deposit-rules-title": "Important Notes:",
+      "deposit-rules": [
+        "Depositing funds to a user account constitutes full acceptance of the website's rules and regulations, and after the transaction is completed, it can only be canceled according to the announced conditions.",
+        "The user is responsible for the accuracy of the information entered when depositing funds (including the amount, payment gateway, and destination user account) and the website will not be responsible for any user errors.",
+        "Deposited funds can only be used to use the website's services and transferring, selling, or converting credit to cash to other persons is not permitted.",
+        "Requesting a refund is only possible under special circumstances and after reviewing the financial unit, and if approved, at least 10% of the amount paid will be deducted for tax costs, fees, and accounting matters.",
+        "Due to the country's financial and tax laws, in many cases it is not possible to refund funds And the user accepts this by making a deposit.",
+        "In the event of any abuse, suspicious activity, violation of laws or unauthorized use of the services, the website is authorized to limit or block the user's access without refund.",
+        "The validity of the user account does not expire, but if the account is inactive for a long time or financial policies change, its terms of use may be updated.",
+        "All financial transactions are carried out in accordance with the current laws of the Islamic Republic of Iran and are subject to the regulations of the country's regulatory and official payment institutions."
+      ],
+      "topup": "Top up",
+      "create-invoice": "Create invoice",
+      "balance": "Current balance",
+      "currency": "Toman",
+      "noTransactions": "No transactions found",
+      "invalidAmount": "The amount entered is not valid",
+      "amountRangeInvalid": "The minimum amount must be {min} and the maximum {max}",
+      "recentTransactions": "Recent transactions",
+      "transfer-iranian-card": "Card to card",
+      "transfer-iranian-card-description": "Deposit the desired amount to the card number provided, please note that you must contact support to confirm the transaction",
+      "crypto": "Digital currency",
+      "crypto-description": "After creating the payment link, you can choose from more than 300 cryptocurrencies to make the transaction by clicking on it. The final amount deposited into your account, depending on the fluctuations in the currency market, is calculated based on the current rate at the time of transaction confirmation ",
+      "rial": "Rial",
+      "rial-description": "This transaction is being made through the payment gateway of the Central Bank of the Islamic Republic of Iran.",
+      "latestTransaction": "Bill payable:",
+      "paymentLink": "Bill payment link",
+      "payNow": "Pay",
+      "paid-at": "Bill payment date",
+      "not-paid": "Bill not paid",
+
+      "amount": "Amount",
+      "enter-amount": "Enter bill amount",
+      "topupDone": "Your bill has been successfully created.",
+      "types": {
+        "api_usage": "API usage",
+        "deposit": "Deposit",
+        "withdraw": "Withdrawal",
+        "admin_adjust": "Administrator edit"
+      }
+    },
+    "general": {
+      "unknownProblem": "An unknown problem has occurred.",
+      "cancel": "Cancel"
+    }
+  }
+}

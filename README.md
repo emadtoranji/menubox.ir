@@ -63,7 +63,9 @@ git clone [https://github.com/emadtoranji/menubox.ir.git](https://github.com/ema
 
 اگر ایده‌ای دارید یا باگی پیدا کردید، خوشحال می‌شویم که Pull Request بفرستید.
 
-## 👤 نویسنده | Author
+##
+
+<br />
 
 <div align="center">
 

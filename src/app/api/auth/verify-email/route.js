@@ -2,7 +2,6 @@
 
 import { HandleResponse, methodNotAllowedResponse } from '@api/route';
 import prisma from '@lib/prisma';
-import { users, verificationTokens } from '@database/schema';
 import { withRateLimit } from '@utils/rateLimit';
 import { replaceNonEnglishChar } from '@utils/sanitizer';
 import { reportInternalErrors } from '@server/reportInternalErrors';

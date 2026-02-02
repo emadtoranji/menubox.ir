@@ -6,6 +6,7 @@ import { formatNumber } from '@utils/numbers';
 import Image from 'next/image';
 import Link from 'next/link';
 import { auth } from '@utils/auth/NextAuth';
+import { redirect } from 'next/navigation';
 
 export default async function FinancePage({ params }) {
   const { lng } = (await params) || {};

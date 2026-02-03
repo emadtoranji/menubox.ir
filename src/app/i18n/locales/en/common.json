@@ -83,6 +83,7 @@
   },
   "code-responses": {
     "___global_section___": "",
+    "SUCCESS": "It was successful",
     "FORM_HAS_ERRORS": "The form contains errors. Please fix them and try again.",
     "EMPTY_RESPONSE": "No Response Found",
     "DATABASE_ERROR": "Internal server error",

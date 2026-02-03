@@ -84,6 +84,7 @@
 
   "code-responses": {
     "___global_section___": "",
+    "SUCCESS": "موفقیت آمیز بود",
     "FORM_HAS_ERRORS": "فرم دارای خطا است. لطفاً خطاها را برطرف کرده و دوباره ارسال کنید.",
     "EMPTY_RESPONSE": "پاسخی یافت نشد",
     "DATABASE_ERROR": "خطای داخلی سرور",

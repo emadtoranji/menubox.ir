@@ -4,8 +4,11 @@
   "private": false,
   "scripts": {
     "dev": "next dev --port 4501",
-    "build": "prisma migrate dev --name init && npm run generate && next build",
-    "build-local": "dotenv -e .env.local -- prisma migrate dev --name init && dotenv -e .env.local -- prisma generate && next build",
+    "build": "npm run generate && next build",
+    "db-build-migrate": "dotenv -e .env.production -- prisma migrate deploy",
+    "db-build-reset": "dotenv -e .env.production -- prisma migrate reset",
+    "db-build-seed": "dotenv -e .env.production -- prisma db seed",
+    "build-local": "dotenv -e .env.local -- prisma generate && next build",
     "generate": "npx prisma generate",
     "install-omit-dev": "npm install --omit=dev",
     "start": "node server.js",

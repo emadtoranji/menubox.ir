@@ -122,7 +122,7 @@ function SignInForm({ t, currentLang, enabledLoginProviders }) {
         <div className='d-flex justify-content-between align-items-center mb-3 gap-2'>
           <h1 className='h3 lead fw-semibold'>{t('dashboard.login.title')}</h1>
           <button
-            className='btn btn-primary btn-sm shadow'
+            className='btn btn-inactive btn-sm fw-bold'
             onClick={() => setSignupRequired(!signupRequired)}
           >
             {signupRequired

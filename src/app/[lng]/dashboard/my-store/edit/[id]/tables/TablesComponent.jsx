@@ -88,7 +88,7 @@ function StoreTableCard({
 
   const isEdit = !!table.id;
   const tableLink = table.id
-    ? `${BaseUrlAddress}store/${store?.id}?table=${table.id}`
+    ? `${BaseUrlAddress}store/${store.id}?table=${table.id}&source=qrcode`
     : null;
 
   async function submit() {

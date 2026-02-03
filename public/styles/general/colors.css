@@ -33,6 +33,10 @@ main {
   color: var(--color-white) !important;
 }
 
+.text-active {
+  color: var(--color-purple) !important;
+}
+
 .btn-active {
   background-color: var(--bs-purple) !important;
   color: var(--color-white) !important;

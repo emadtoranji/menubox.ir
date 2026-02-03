@@ -40,12 +40,12 @@ export default async function Head({
                 className='bi bi-trash3-fill text-danger fs-3'
               ></i>
             </Link>
-          )}{' '}
+          )}
           {!hasNew ? undefined : (
             <Link href={`/${lng}/dashboard/my-store/new`} className='col'>
               <i
                 type='button'
-                className='bi bi-plus-circle-fill text-success fs-3'
+                className='bi bi-plus-circle-fill text-active fs-2'
               ></i>
             </Link>
           )}

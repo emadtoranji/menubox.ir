@@ -12,7 +12,7 @@
 - **استایل‌دهی:** [Bootstrap 5](https://getbootstrap.com/) & CSS
 - **زبان:** JSX / JavaScript
 - **پایگاه داده:** PostgreSQL
-- **احراز هویت:** Next-Auth v5
+- **احراز هویت:** [Next-Auth v5](https://authjs.dev/)
 
 ---
 
@@ -52,7 +52,7 @@
 برای اجرای پروژه روی سیستم خودتان، پروژه را کلون کنید:
 
 ```bash
-git clone [https://github.com/emadtoranji/menubox.ir.git](https://github.com/emadtoranji/menubox.ir.git)
+git clone [https://github.com/emadtoranji/menugard.ir.git](https://github.com/emadtoranji/menugard.ir.git)
 ```
 
 ## 🤝 مشارکت و لایسنس | Contribution & License

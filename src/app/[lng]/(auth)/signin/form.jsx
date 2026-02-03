@@ -62,8 +62,8 @@ function SignInForm({ t, currentLang, enabledLoginProviders }) {
           toast.error(
             t(
               `code-responses.${validatePassword.reason}`,
-              t('code-responses.PASSWORD_NOT_STRONG')
-            )
+              t('code-responses.PASSWORD_NOT_STRONG'),
+            ),
           );
           return;
         }
@@ -190,7 +190,7 @@ function SignInForm({ t, currentLang, enabledLoginProviders }) {
 
           <div className='row d-flex align-items-center justify-content-center g-1'>
             <button
-              className='btn btn-primary mb-3'
+              className='btn btn-active mb-3'
               type='submit'
               disabled={isSubmitting}
             >
@@ -224,7 +224,7 @@ function SignInForm({ t, currentLang, enabledLoginProviders }) {
                         setIsSubmitting(true);
                         nextAuthLoginButtonHandler(
                           p.id,
-                          `/${currentLang}/dashboard`
+                          `/${currentLang}/dashboard`,
                         );
                       }}
                       type='button'
@@ -241,7 +241,7 @@ function SignInForm({ t, currentLang, enabledLoginProviders }) {
                       setIsSubmitting(true);
                       nextAuthLoginButtonHandler(
                         p.id,
-                        `/${currentLang}/dashboard`
+                        `/${currentLang}/dashboard`,
                       );
                     }}
                     type='button'

@@ -56,8 +56,8 @@ export async function handleCreateBillFromGateway({
   currency = MAIN_CURRENCY,
 }) {
   /*   SANITIZE AND VALIDATION   */
-  const sanitizedCurrency = replaceNonEnglishChar(currency);
-  const sanitizedGateway = replaceNonEnglishChar(gateway);
+  const sanitizedCurrency = replaceNonEnglishChar({ text: currency });
+  const sanitizedGateway = replaceNonEnglishChar({ text: gateway });
 
   if (!userId) {
     return {

@@ -13,11 +13,11 @@ export async function handleVerifyBillFromGateway({
   payment_id = undefined,
 }) {
   /*   SANITIZE AND VALIDATION   */
-  const sanitizedAuthority = replaceNonEnglishChar(
-    authority ?? trackId ?? payment_id,
-  );
+  const sanitizedAuthority = replaceNonEnglishChar({
+    text: authority ?? trackId ?? payment_id,
+  });
 
-  const sanitizedGateway = replaceNonEnglishChar(gateway);
+  const sanitizedGateway = replaceNonEnglishChar({ text: gateway });
 
   if (!userId) {
     return {

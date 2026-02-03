@@ -16,6 +16,7 @@ import { BaseUrlAddress } from '@utils/globalSettings';
 import { fallbackLng, languages } from '@i18n/settings';
 import { reportInternalErrors } from '@server/reportInternalErrors';
 import { signOut } from '@utils/auth/NextAuth';
+import { replaceNonEnglishChar } from '@utils/sanitizer';
 
 const limited = withRateLimit({
   max: 3,
@@ -115,7 +116,10 @@ async function handle_reset_password_send_email({
 }
 
 async function handle_reset_password_token_check({ rawToken }) {
-  const token = rawToken; // keep original logic of replaceNonEnglishChar if needed
+  const token = replaceNonEnglishChar({
+    text: rawToken,
+    colon: false,
+  });
 
   const verification_data = await prisma.verificationToken.findFirst({
     where: {

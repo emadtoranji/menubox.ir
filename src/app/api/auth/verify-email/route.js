@@ -18,7 +18,7 @@ export const GET = async () => {
 export const POST = limited(async (req) => {
   let { token = null } = await req.json();
 
-  token = replaceNonEnglishChar(token, false, false);
+  token = replaceNonEnglishChar({ text: token });
   if (!token) {
     return HandleResponse({
       ok: false,

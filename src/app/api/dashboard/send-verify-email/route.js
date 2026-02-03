@@ -62,7 +62,7 @@ export const POST = limited(async (req) => {
 
     const res = await handleSendEmailVerification(
       user.email,
-      replaceNonEnglishChar(language),
+      replaceNonEnglishChar({ text: language }),
     );
 
     if (res?.ok) {

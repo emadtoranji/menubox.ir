@@ -99,12 +99,20 @@ export async function hasValidIncomingDataForAPIRoute(req) {
   return true;
 }
 
-export function replaceNonEnglishChar(text, underscore = true, dash = true) {
+export function replaceNonEnglishChar({
+  text = '',
+  underscore = true,
+  dash = true,
+  dot = true,
+  colon = false,
+}) {
   if (typeof text !== 'string') return '';
 
   let allowed = 'a-zA-Z0-9';
   if (underscore) allowed += '_';
-  if (dash) allowed += '-';
+  if (dot) allowed += '\\.';
+  if (dash) allowed += '\\-';
+  if (colon) allowed += ':';
 
   const regex = new RegExp(`[^${allowed}]`, 'g');
   return text.replace(regex, '').trim();

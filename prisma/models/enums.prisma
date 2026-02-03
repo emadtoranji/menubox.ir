@@ -86,27 +86,12 @@ enum StoreItemsCategoriesKey {
   iceCream
 }
 
-
-
-enum StoreServiceType {
-  dine_in
-  takeawya
-  delivery
-  customery_choose
-}
-
-enum StoreTranslationEntity {
-  store
-  category
-  item
-  option
-  option_value
-}
-
 enum StoreExplorerSource {
+  direct
   explorer
+  instagram
   telegram
   nfc
-  camera
+  barcode
   unknown
 }

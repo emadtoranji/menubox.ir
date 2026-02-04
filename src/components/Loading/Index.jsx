@@ -1,6 +1,6 @@
 import './Style.css';
 
-const Loader = () => {
+export default function Loading() {
   return (
     <div
       className={`loading-screen position-fixed top-0 left-0 w-100 h-100 d-flex justify-content-center align-items-center`}
@@ -8,6 +8,4 @@ const Loader = () => {
       <div className={`loader`}></div>
     </div>
   );
-};
-
-export default Loader;
+}

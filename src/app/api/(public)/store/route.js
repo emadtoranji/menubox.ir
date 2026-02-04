@@ -54,6 +54,7 @@ const getStoresCached = ({ page = 1, slug = '', search = '' }) =>
                   isActive: true,
                   options: {
                     select: {
+                      id: true,
                       title: true,
                       isRequired: true,
                       minSelect: true,

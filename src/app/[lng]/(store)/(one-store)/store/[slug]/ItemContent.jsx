@@ -11,6 +11,7 @@ import { OffcanvasButton, OffcanvasWrapper } from '@components/Offcanvas';
 import SelectedItemsList from './SelectedItemsList';
 import ItemQuantityButton from './ItemQuantityButton';
 import CurrencySpan from './CurrencySpan';
+import ItemPrice from './ItemPrice';
 
 export default function ItemContent({
   items = [],
@@ -80,38 +81,12 @@ export default function ItemContent({
                 </div>
 
                 <div className='card-footer bg-white'>
-                  <div className='d-flex align-items-center justify-content-between'>
-                    <div className=''>
-                      <h6
-                        className={`m-auto d-flex align-items-center gap-1 ${
-                          item.price > 0 && item.discountPercent
-                            ? 'text-decoration-line-through fs-7 fw-light'
-                            : 'fs-5 fw-bold'
-                        }`}
-                      >
-                        {item.price === 0 ? (
-                          freeSpan
-                        ) : (
-                          <>
-                            <span>{formatNumber(item.price, lng)}</span>
-                            {currencySpan}
-                          </>
-                        )}
-                      </h6>
-
-                      {item.discountPercent ? (
-                        <h6 className='fw-bold fs-5 m-auto d-flex align-items-center gap-1'>
-                          {discontedPrice === 0 ? (
-                            freeSpan
-                          ) : (
-                            <>
-                              <span>{formatNumber(discontedPrice, lng)}</span>
-                              {currencySpan}
-                            </>
-                          )}
-                        </h6>
-                      ) : null}
-                    </div>
+                  <div className='d-flex align-items-center justify-content-between py-1'>
+                    <ItemPrice
+                      lng={lng}
+                      item={item}
+                      storeCurrency={storeCurrency}
+                    />
 
                     <ItemQuantityButton
                       item={item}
@@ -124,6 +99,7 @@ export default function ItemContent({
                     lng={lng}
                     item={item}
                     options={item?.options || []}
+                    storeCurrency={storeCurrency}
                   />
                 </div>
               </div>

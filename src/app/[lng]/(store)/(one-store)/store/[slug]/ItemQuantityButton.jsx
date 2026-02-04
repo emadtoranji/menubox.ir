@@ -48,15 +48,15 @@ export default function ItemQuantityButton({ item = {} }) {
   return quantity === 0 ? (
     <button
       type='button'
-      className={`btn btn-sm ${!isOrderable ? 'btn-danger' : 'btn-active'} `}
+      className={`btn ${!isOrderable ? 'btn-danger  btn-sm' : 'btn-active p-2'}`}
       disabled={!isOrderable}
       onClick={() => handleAddItem(item)}
     >
       <span className='d-flex align-items-center gap-1'>
         {isOrderable ? (
           <>
-            <i className='d-flex align-items-center bi bi-plus-lg'></i>{' '}
-            <span>{t('add-item')}</span>
+            <i className='d-flex align-items-center bi bi-plus-lg'></i>
+            <span className='d-none'>{t('add-item')}</span>
           </>
         ) : (
           t('is-not-active')

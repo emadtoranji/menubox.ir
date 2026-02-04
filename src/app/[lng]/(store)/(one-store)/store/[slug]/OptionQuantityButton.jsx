@@ -45,16 +45,16 @@ export default function OptionQuantityButton({ item = null, lng, option }) {
   ) : isRequiredAndIsSimple ? (
     <button
       type='button'
-      className='d-flex gap-1 align-items-center btn btn-active btn-sm'
+      className='d-flex gap-1 align-items-center btn btn-active p-2'
       disabled
     >
       <i className='d-flex align-items-center bi bi-check2-circle'></i>
-      <span>{t('is-required')}</span>
+      <span className='d-none'>{t('is-required')}</span>
     </button>
   ) : isSimpleAdd && count === 0 ? (
     <button
       type='button'
-      className='d-flex gap-1 btn btn-active btn-sm'
+      className='d-flex gap-1 btn btn-active p-2'
       onClick={() =>
         handleOptionSelect({
           optionId,
@@ -65,12 +65,12 @@ export default function OptionQuantityButton({ item = null, lng, option }) {
       }
     >
       <i className='d-flex align-items-center bi bi-plus-lg'></i>
-      <span>{t('add-option')}</span>
+      <span className='d-none'>{t('add-option')}</span>
     </button>
   ) : isSimpleAdd && count === 1 ? (
     <button
       type='button'
-      className='d-flex gap-1 btn btn-danger btn-sm'
+      className='d-flex gap-1 btn btn-danger p-2'
       onClick={() =>
         handleOptionSelect({
           optionId,
@@ -81,13 +81,13 @@ export default function OptionQuantityButton({ item = null, lng, option }) {
       }
     >
       <i className='d-flex align-items-center bi bi-trash3'></i>
-      <span>{t('remove-option')}</span>
+      <span className='d-none'>{t('remove-option')}</span>
     </button>
   ) : (
     <div className='d-flex align-items-center gap-1 rounded border border-dark'>
       <button
         type='button'
-        className='rounded border border-light btn btn-sm'
+        className='rounded border border-light btn p-2'
         disabled={atMax}
         onClick={() =>
           handleOptionSelect({
@@ -107,7 +107,7 @@ export default function OptionQuantityButton({ item = null, lng, option }) {
 
       <button
         type='button'
-        className='rounded border border-light btn btn-sm'
+        className='rounded border border-light btn p-2'
         disabled={atMin}
         onClick={() =>
           handleOptionSelect({

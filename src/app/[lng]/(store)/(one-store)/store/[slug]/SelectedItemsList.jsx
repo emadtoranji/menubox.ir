@@ -7,6 +7,8 @@ import { formatNumber } from '@utils/numbers';
 import ItemQuantityButton from './ItemQuantityButton';
 import CurrencySpan from './CurrencySpan';
 import OptionQuantityButton from './OptionQuantityButton';
+import ItemPrice from './ItemPrice';
+import OptionPrice from './OptionPrice';
 
 export default function SelectedItemsList({ lng, storeCurrency }) {
   const { state } = useOrder();
@@ -18,37 +20,46 @@ export default function SelectedItemsList({ lng, storeCurrency }) {
   const currencySpan = <CurrencySpan t={t} storeCurrency={storeCurrency} />;
 
   return (
-    <div className='row row-cols-1 g-2'>
+    <div className='container-lg mx-auto row row-cols-1 g-2'>
       {state.items.map((item, index) => {
         return (
-          <div key={index} className='py-1 border-bottom text-active'>
+          <div key={index} className='py-3 border-bottom border-3 text-active'>
             <div className='d-flex align-items-center justify-content-between my-auto'>
               <h4>{item.title}</h4>
               <ItemQuantityButton item={item} />
             </div>
 
-            <div className='row row-cols-1 g-2 mt-1'>
+            <ItemPrice lng={lng} item={item} storeCurrency={storeCurrency} />
+
+            <div className='container mx-1 row row-cols-1 g-2 mt-2'>
               {item.options.map((option) => {
                 if (option.count <= 0 || !option?.isActive) return undefined;
                 return (
-                  <div
-                    key={option.id}
-                    className='d-flex align-items-center justify-content-between'
-                  >
-                    <h6>{option.title}</h6>
-                    <OptionQuantityButton
-                      item={item}
-                      lng={lng}
-                      option={option}
-                    />
+                  <div className='my-auto border-top py-2'>
+                    <div
+                      key={option.id}
+                      className='d-flex align-items-center justify-content-between'
+                    >
+                      <div className='d-flex align-items-baseline gap-1 m-0'>
+                        {option.isRequired && (
+                          <i className='d-flex align-items-center fs-11 bi bi-asterisk text-danger'></i>
+                        )}
+                        <div>{option.title}</div>
+                        <OptionPrice
+                          option={option}
+                          lng={lng}
+                          storeCurrency={storeCurrency}
+                        />
+                      </div>
+                      <OptionQuantityButton
+                        item={item}
+                        lng={lng}
+                        option={option}
+                      />
+                    </div>
                   </div>
                 );
               })}
-            </div>
-
-            <div className='d-flex align-items-center justify-content-start gap-1 h4 mt-3'>
-              <span>{formatNumber(item.price, lng)}</span>
-              <span>{currencySpan}</span>
             </div>
           </div>
         );

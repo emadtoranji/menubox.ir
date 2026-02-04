@@ -1,3 +1,5 @@
+'use client';
+
 import { useT } from '@i18n/client';
 
 export default function ItemCategories({

@@ -2,6 +2,7 @@
   "title": "Stores",
   "search-placeholder": "Search here...",
   "empty": "No stores found",
+  "store-disabled": "Store is temporary disabled",
   "add-item": "Add",
   "add-option": "Add",
   "add-option-done": "Added",

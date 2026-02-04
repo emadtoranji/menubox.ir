@@ -1,4 +1,5 @@
 import StoreNotFound from '../../../StoreNotFound';
+import StoreDisabled from '../../../StoreDisabled';
 import { getStores } from '@server/getStores';
 import { getT } from '@i18n/server';
 import StoreComponent from './StoreComponent';
@@ -20,6 +21,7 @@ export default async function Page({ params, searchParams }) {
   const store = response?.result ?? {};
 
   if (!store?.slug) return <StoreNotFound t={t} />;
+  if (!store?.isActive) return <StoreDisabled t={t} />;
   const headersList = await headers();
 
   return (

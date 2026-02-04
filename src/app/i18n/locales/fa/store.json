@@ -2,6 +2,7 @@
   "title": "فروشگاه ها",
   "search-placeholder": "اینجا جستجو کنید...",
   "empty": "فروشگاهی یافت نشد",
+  "store-disabled": "فروشگاه موقتا غیر فعال شده است",
   "add-item": "افزودن",
   "add-option": "افزودن",
   "add-option-done": "افزوده شد",

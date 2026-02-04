@@ -16,6 +16,9 @@
     "tax-included-yes": "Yes, the price listed includes Tax is also included",
     "tax-included-no": "No, the price listed does not include tax; it should be calculated and written separately",
     "tax-percent": "How much tax percentage do you charge?",
+    "is-active": "فروشگاه فعال باشد؟",
+    "is-active-yes": "Yes, Activted and show publicly",
+    "is-active-no": "No, Disabled and don't show publicly",
     "created-at": "Date the store was created",
     "updated-at": "Date the store was last updated"
   },

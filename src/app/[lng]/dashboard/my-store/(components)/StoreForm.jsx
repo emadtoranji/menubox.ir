@@ -59,6 +59,8 @@ export default function Form({
     included: oldStoreData?.taxIncluded || true,
     percent: oldStoreData?.taxPercent || 10,
   });
+  const [isStoreActive, setIsStoreActive] = useState(oldStoreData?.isActive);
+
   const [isSubmiting, setIsSubmiting] = useState(false);
   const [submitIsAvailble, setSubmitIsAvailble] = useState(true);
   const [errors, setErrors] = useState({});
@@ -100,6 +102,7 @@ export default function Form({
         phone,
         currency,
         tax,
+        isActive: isStoreActive,
       };
       setIsSubmiting(true);
 
@@ -174,6 +177,8 @@ export default function Form({
     } else if (name === 'tax-percent') {
       value = numberToEnglish(value);
       setTax({ ...tax, percent: value.replace(/[^0-9]/g, '') });
+    } else if (name === 'is-active') {
+      setIsStoreActive(value);
     }
 
     if (errors[name]) {
@@ -451,6 +456,30 @@ export default function Form({
               </div>
             </>
           )}
+        </div>
+
+        <div className='mt-1 py-3 border-top rounded'>
+          <h6>{t('key-names.is-active')}</h6>
+          <div className='d-flex gap-2'>
+            <button
+              type='button'
+              className={`btn col ${
+                isStoreActive ? 'btn-active fw-bold' : 'btn-inactive'
+              }`}
+              onClick={() => HandleChange('is-active', true)}
+            >
+              {t('key-names.is-active-yes')}
+            </button>
+            <button
+              type='button'
+              className={`btn col ${
+                !isStoreActive ? 'btn-danger fw-bold' : 'btn-outline-danger'
+              }`}
+              onClick={() => HandleChange('is-active', false)}
+            >
+              {t('key-names.is-active-no')}
+            </button>
+          </div>
         </div>
 
         {/* submit */}

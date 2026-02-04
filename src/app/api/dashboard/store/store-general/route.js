@@ -41,6 +41,7 @@ export const POST = limited(async (req) => {
       phone,
       currency,
       tax,
+      isActive,
     } = await req.json();
 
     if (isNewStore == '0') {
@@ -61,6 +62,7 @@ export const POST = limited(async (req) => {
     phone = phone.trim();
     tax.enable = toBoolean(tax.enable);
     tax.included = toBoolean(tax.included);
+    isActive = toBoolean(isActive);
 
     const validationErros = StoreValidationForm({
       name,
@@ -154,6 +156,7 @@ export const POST = limited(async (req) => {
               taxEnabled: tax.enable,
               taxIncluded: tax.included,
               taxPercent: tax.enable ? parseInt(tax?.percent || 0) : 0,
+              isActive,
             },
           });
 
@@ -198,6 +201,7 @@ export const POST = limited(async (req) => {
               taxEnabled: tax.enable,
               taxIncluded: tax.included,
               taxPercent: tax.enable ? parseInt(tax?.percent || 0) : 0,
+              isActive,
             },
           });
 

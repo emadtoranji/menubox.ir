@@ -16,7 +16,6 @@ export default function SelectedItemsList({ lng, storeCurrency }) {
   if (!state?.items?.length) return <h3>{t('order-list-empty')}</h3>;
 
   const currencySpan = <CurrencySpan t={t} storeCurrency={storeCurrency} />;
-  console.log(state.totalPrice);
 
   return (
     <div className='row row-cols-1 g-2'>

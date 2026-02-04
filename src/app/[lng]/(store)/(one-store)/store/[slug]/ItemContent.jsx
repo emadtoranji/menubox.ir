@@ -35,7 +35,7 @@ export default function ItemContent({
                 <div className='card-body d-flex'>
                   <div className='col px-1'>
                     <h4 className='fw-bold'>{item.title}</h4>
-                    <p>{item.description}</p>
+                    <p className='text-justify px-1'>{item.description}</p>
                   </div>
                   <div className='col-auto d-flex align-items-center jusitfy-content-center'>
                     <Image

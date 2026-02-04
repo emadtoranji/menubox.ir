@@ -36,12 +36,6 @@ export default function ItemOptionCard({ option, onChange, onDelete }) {
             minSelect: 1,
             maxSelect: 1,
           });
-        else
-          onChange({
-            ...option,
-            minSelect: 1,
-            maxSelect: 1,
-          });
     } else {
       if (option.minSelect !== 0)
         onChange({

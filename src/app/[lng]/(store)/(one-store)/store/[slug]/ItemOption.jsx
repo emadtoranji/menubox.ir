@@ -1,49 +1,65 @@
+'use client';
+
 import { useT } from '@i18n/client';
 import { freeSpanComponent } from './FreeSpan';
 import { formatNumber } from '@utils/numbers';
-import { useEffect, useState } from 'react';
+import { useOrder } from '@context/notes/order/useOrder';
+import Loading from '@components/Loading/client';
 
-export default function ItemOption({ lng, options = [], isOrderable = true }) {
+export default function ItemOption({
+  lng,
+  options = [],
+  itemId = null,
+  isOrderable = true,
+}) {
   const { t } = useT('store');
+  const { state, updateOption } = useOrder();
+
+  if (state === null) return <Loading />;
+
+  if (!itemId) return null;
   if (!options.length) return null;
 
   const additionalClass = 'm-auto fs-7';
   const freeSpan = freeSpanComponent({ t, additionalClass });
 
-  const [optionCounts, setOptionCounts] = useState({});
+  const orderItem = (state?.items || []).find((i) => i.id === itemId);
+  const optionCounts = {};
+  orderItem?.options?.forEach((o) => {
+    optionCounts[o.id] = o.count ?? o.minSelect ?? 0;
+  });
 
-  useEffect(() => {
-    const initialState = {};
-    options.forEach((option, index) => {
-      initialState[index] = option?.minSelect || 0;
-    });
-    setOptionCounts(initialState);
-  }, [options]);
+  const currentOptions = orderItem?.options || [];
 
-  function handleOptionSelect({ index, minSelect, maxSelect, change }) {
-    setOptionCounts((prev) => {
-      const current = prev[index] ?? minSelect;
-      const next = Math.min(maxSelect, Math.max(minSelect, current + change));
-      return { ...prev, [index]: next };
-    });
+  function handleOptionSelect({ optionId, minSelect, maxSelect, change }) {
+    const currentCount = optionCounts[optionId] ?? minSelect;
+    const nextCount = Math.min(
+      maxSelect,
+      Math.max(minSelect, currentCount + change),
+    );
+
+    const optionToUpdate = orderItem.options.find((o) => o.id === optionId);
+    if (!optionToUpdate) return;
+
+    updateOption(itemId, { ...optionToUpdate, count: nextCount });
   }
 
   return (
     <div className='border-top mt-2 pt-2 w-100 row row-cols-1 g-1 px-1'>
-      {options.map((option, index) => {
+      {currentOptions.map((option) => {
         if (!option?.title) return null;
-
-        const isOrderableOption = isOrderable ? option?.isActive : false;
+        const optionId = option.id;
+        const count = optionCounts?.[optionId] ?? option.minSelect ?? 0;
+        const isOrderableOption = isOrderable
+          ? (option?.isActive ?? true)
+          : false;
         const minSelect = option.minSelect ?? 0;
         const maxSelect = option.maxSelect ?? 1;
-        const count = optionCounts[index] ?? minSelect;
 
         const atMin = count <= minSelect;
         const atMax = count >= maxSelect;
-
         const isSimpleAdd =
           (minSelect === 0 || minSelect === 1) && maxSelect === 1;
-
         const isRequiredAndIsSimple = option.isRequired && isSimpleAdd;
 
         const priceSection = !isNaN(option.priceChangePercent) ? (
@@ -62,7 +78,7 @@ export default function ItemOption({ lng, options = [], isOrderable = true }) {
 
         return (
           <div
-            key={`item-option-${index}`}
+            key={`item-option-${optionId}`}
             className='d-flex align-items-center justify-content-between'
           >
             <h6 className='d-flex align-items-baseline gap-1 m-0'>
@@ -92,7 +108,7 @@ export default function ItemOption({ lng, options = [], isOrderable = true }) {
                 className='d-flex gap-1 btn btn-active btn-sm'
                 onClick={() =>
                   handleOptionSelect({
-                    index,
+                    optionId,
                     minSelect,
                     maxSelect,
                     change: 1,
@@ -108,15 +124,15 @@ export default function ItemOption({ lng, options = [], isOrderable = true }) {
                 className='d-flex gap-1 btn btn-danger btn-sm'
                 onClick={() =>
                   handleOptionSelect({
-                    index,
+                    optionId,
                     minSelect,
                     maxSelect,
                     change: -1,
                   })
                 }
               >
-                <i className='d-flex align-items-center bi bi-x-circle'></i>
-                <span className=''>{t('remove-option')}</span>
+                <i className='d-flex align-items-center bi bi-trash3'></i>
+                <span>{t('remove-option')}</span>
               </button>
             ) : (
               <div className='d-flex align-items-center gap-1 rounded border border-dark'>
@@ -126,7 +142,7 @@ export default function ItemOption({ lng, options = [], isOrderable = true }) {
                   disabled={atMax}
                   onClick={() =>
                     handleOptionSelect({
-                      index,
+                      optionId,
                       minSelect,
                       maxSelect,
                       change: 1,
@@ -146,7 +162,7 @@ export default function ItemOption({ lng, options = [], isOrderable = true }) {
                   disabled={atMin}
                   onClick={() =>
                     handleOptionSelect({
-                      index,
+                      optionId,
                       minSelect,
                       maxSelect,
                       change: -1,

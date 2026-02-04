@@ -4,13 +4,14 @@ import { useState } from 'react';
 import ItemCategories from './ItemCategories';
 import ItemContent from './ItemContent';
 import StoreIntro from './StoreIntro';
+import { OrderProvider } from '@context/notes/order/context';
 
 export default function StoreComponent({ store, lng }) {
   const [activeCategory, setActiveCategory] = useState(null);
   const defaultLogoUrl = '/images/app-logo.webp';
 
   return (
-    <>
+    <OrderProvider>
       <ItemCategories
         activeCategory={activeCategory}
         setActiveCategory={setActiveCategory}
@@ -51,6 +52,6 @@ export default function StoreComponent({ store, lng }) {
       />
 
       <div className='text-center text-justify mt-5'>{store.description}</div>
-    </>
+    </OrderProvider>
   );
 }

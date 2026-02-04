@@ -42,7 +42,6 @@ export default function ItemsComponent({ StoreItemsCategoriesKey, store }) {
     setItems((prev) =>
       prev.map((item) => (item.id === id ? { ...updatedItem, id } : item)),
     );
-    setActiveItemId(null);
   }
 
   function removeItem(id) {

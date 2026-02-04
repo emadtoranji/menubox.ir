@@ -7,6 +7,7 @@ export const OrderContext = createContext(null);
 
 export const initialOrderState = {
   items: [],
+  totalPrice: 0,
   note: '',
 };
 
@@ -77,6 +78,34 @@ export function orderReducer(state, action) {
         ),
       };
 
+    case 'UPDATE_TOTAL_PRICE': {
+      let finalPrice = 0;
+
+      state.items.forEach((item) => {
+        const quantity = item.quantity ?? 1;
+
+        const discountPercent = item.discountPercent ?? 0;
+        const discountedPrice =
+          item.price - (item.price * discountPercent) / 100;
+
+        const basePrice = discountedPrice * quantity;
+
+        let optionsPercent = 0;
+
+        if (Array.isArray(item.options)) {
+          item.options.forEach((option) => {
+            const count = option.count ?? 1;
+            const percent = option.priceChangePercent ?? 0;
+            optionsPercent += percent * count;
+          });
+        }
+
+        finalPrice += basePrice + (basePrice * optionsPercent) / 100;
+      });
+
+      return { ...state, totalPrice: finalPrice };
+    }
+
     case 'RESET':
     case 'RESET_ORDER':
       return initialOrderState;
@@ -111,6 +140,11 @@ export function OrderProvider({ children }) {
       dispatch({ type: 'HYDRATE', payload: initialOrderState });
     }
   }, []);
+
+  useEffect(() => {
+    if (typeof state?.items === 'object')
+      dispatch({ type: 'UPDATE_TOTAL_PRICE' });
+  }, [state?.items]);
 
   useEffect(() => {
     if (state === null) return;

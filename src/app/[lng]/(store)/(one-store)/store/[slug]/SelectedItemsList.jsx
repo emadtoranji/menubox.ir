@@ -16,6 +16,7 @@ export default function SelectedItemsList({ lng, storeCurrency }) {
   if (!state?.items?.length) return <h3>{t('order-list-empty')}</h3>;
 
   const currencySpan = <CurrencySpan t={t} storeCurrency={storeCurrency} />;
+  console.log(state.totalPrice);
 
   return (
     <div className='row row-cols-1 g-2'>
@@ -46,13 +47,18 @@ export default function SelectedItemsList({ lng, storeCurrency }) {
               })}
             </div>
 
-            <div className='d-flex align-items-center justify-content-center gap-1 h3 mt-3'>
+            <div className='d-flex align-items-center justify-content-start gap-1 h4 mt-3'>
               <span>{formatNumber(item.price, lng)}</span>
               <span>{currencySpan}</span>
             </div>
           </div>
         );
       })}
+
+      <div className='d-flex align-items-center justify-content-center gap-1 h2 mt-3'>
+        <span>{formatNumber(state.totalPrice, lng)}</span>
+        <span>{currencySpan}</span>
+      </div>
     </div>
   );
 }

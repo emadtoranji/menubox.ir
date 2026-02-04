@@ -53,16 +53,11 @@ export default function ItemContent({
                   <div className='d-flex align-items-center justify-content-between'>
                     <div className=''>
                       <h6
-                        className={`m-auto d-flex align-items-center gap-1 ${item.discountPercent ? 'text-decoration-line-through fs-6 fw-light small' : 'fs-5 fw-bold'}`}
+                        className={`m-auto d-flex align-items-center gap-1 ${item.price > 0 && item.discountPercent ? 'text-decoration-line-through fs-7 fw-light' : 'fs-5 fw-bold'}`}
                       >
-                        {item.price === 0 ? (
-                          freeSpan
-                        ) : (
-                          <>
-                            <span>{formatNumber(item.price, lng)}</span>
-                            {currencySpan}
-                          </>
-                        )}
+                        {item.price === 0
+                          ? freeSpan
+                          : formatNumber(item.price, lng)}
                       </h6>
                       {item.discountPercent ? (
                         <h6 className='fw-bold fs-5 m-auto d-flex align-items-center gap-1'>

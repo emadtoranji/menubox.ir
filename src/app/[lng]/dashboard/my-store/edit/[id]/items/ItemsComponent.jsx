@@ -94,6 +94,7 @@ export default function ItemsComponent({ StoreItemsCategoriesKey, store }) {
       ) : undefined}
       {activeItemId ? (
         <StoreItemCard
+          key={activeItemId}
           storeId={store.id}
           StoreItemsCategoriesKey={StoreItemsCategoriesKey}
           item={items.find((item) => item.id === activeItemId)}

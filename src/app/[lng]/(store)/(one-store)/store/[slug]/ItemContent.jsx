@@ -1,6 +1,8 @@
 import { useT } from '@i18n/client';
 import { formatNumber } from '@utils/numbers';
 import Image from 'next/image';
+import ItemOption from './ItemOption';
+import { freeSpanComponent } from './FreeSpan';
 
 export default function ItemContent({
   items = {},
@@ -9,7 +11,7 @@ export default function ItemContent({
 }) {
   const { t, i18n } = useT('store');
   const lng = i18n.language;
-  const freeSpan = <span className='text-success'>{t('free')}</span>;
+  const freeSpan = freeSpanComponent({ t });
   const currencySpan = (
     <span className='small currency-font'>
       {t(`currencies.${storeCurrency}`, storeCurrency || '')}
@@ -76,6 +78,7 @@ export default function ItemContent({
                       ) : undefined}
                     </div>
                     <button
+                      type='button'
                       className={`d-flex align-items-center gap-1 btn ${!item?.isActive || !item?.isAvailable ? 'btn-danger' : 'btn-active'} btn-sm`}
                       disabled={!isOrderable}
                     >
@@ -95,6 +98,11 @@ export default function ItemContent({
                       ) : undefined}
                     </button>
                   </div>
+                  <ItemOption
+                    lng={lng}
+                    options={item?.options || {}}
+                    isOrderable={isOrderable}
+                  />
                 </div>
               </div>
             </div>

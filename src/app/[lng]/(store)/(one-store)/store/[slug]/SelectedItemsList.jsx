@@ -31,7 +31,7 @@ export default function SelectedItemsList({ lng, storeCurrency }) {
 
             <ItemPrice lng={lng} item={item} storeCurrency={storeCurrency} />
 
-            <div className='container mx-1 row row-cols-1 g-2 mt-2'>
+            <div className='container mx-auto row row-cols-1 g-2 mt-2'>
               {item.options.map((option) => {
                 if (option.count <= 0 || !option?.isActive) return undefined;
                 return (

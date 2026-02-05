@@ -35,7 +35,7 @@ export default function Form({
         toast.error(t('general.unknown-problem'));
       }
     })();
-  });
+  }, []);
 
   const router = useRouter();
   const { t, i18n } = useT('dashboard-my-store');

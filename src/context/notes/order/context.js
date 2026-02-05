@@ -89,19 +89,18 @@ export function orderReducer(state, action) {
       if (Array.isArray(state?.items)) {
         state.items.forEach((item) => {
           const quantity = item?.quantity ?? 0;
-          if (quantity) {
+          if (quantity && item?.isActive && item?.isAvailable) {
             const itemDiscount = item?.discountPercent ?? 0;
+
             const discountedItemPrice =
               item.price - (item.price * itemDiscount) / 100;
 
             const itemTotal = discountedItemPrice * quantity;
-
             let optionsTotal = 0;
-
             if (Array.isArray(item?.options)) {
               item.options.forEach((option) => {
                 const optionCount = option?.count ?? 0;
-                if (optionCount) {
+                if (optionCount && option?.isActive) {
                   const optionPrice = option.price ?? 0;
                   const optionDiscount = option?.discountPercent ?? 0;
 

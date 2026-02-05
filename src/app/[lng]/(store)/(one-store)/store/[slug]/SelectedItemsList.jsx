@@ -58,7 +58,7 @@ export default function SelectedItemsList({ storeCurrency }) {
         );
       })}
 
-      <div className='mt-3'>
+      <div className='mt-3 num-align'>
         <div className='d-flex align-items-center justify-content-between h5'>
           <div>{t('order-list-tax-title')}</div>
           <div className='d-flex gap-1'>
@@ -73,7 +73,7 @@ export default function SelectedItemsList({ storeCurrency }) {
             <span>{currencySpan}</span>
           </div>
         </div>
-        <div className='d-flex align-items-center justify-content-between mt-3 h3'>
+        <div className='d-flex align-items-center justify-content-between mt-4 h4'>
           <div>{t('order-list-total-price-title')}</div>
           <div className='d-flex gap-1'>
             <span>{formatNumber(state.totalPrice, lng)}</span>

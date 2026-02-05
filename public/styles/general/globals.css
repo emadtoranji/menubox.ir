@@ -133,3 +133,9 @@ body::-webkit-scrollbar-thumb {
   -webkit-filter: blur(6px);
   user-select: none;
 }
+
+.num-align {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: 'tnum';
+  unicode-bidi: plaintext;
+}

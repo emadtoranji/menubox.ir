@@ -86,42 +86,45 @@ export function orderReducer(state, action) {
     case 'UPDATE_TOTAL_PRICE': {
       let itemsPrice = 0;
       let taxPrice = 0;
-      if (Array.isArray(state.items)) {
+      if (Array.isArray(state?.items)) {
         state.items.forEach((item) => {
-          const quantity = item.quantity ?? 0;
+          const quantity = item?.quantity ?? 0;
+          if (quantity) {
+            const itemDiscount = item?.discountPercent ?? 0;
+            const discountedItemPrice =
+              item.price - (item.price * itemDiscount) / 100;
 
-          const itemDiscount = item.discountPercent ?? 0;
-          const discountedItemPrice =
-            item.price - (item.price * itemDiscount) / 100;
+            const itemTotal = discountedItemPrice * quantity;
 
-          const itemTotal = discountedItemPrice * quantity;
+            let optionsTotal = 0;
 
-          let optionsTotal = 0;
+            if (Array.isArray(item?.options)) {
+              item.options.forEach((option) => {
+                const optionCount = option?.count ?? 0;
+                if (optionCount) {
+                  const optionPrice = option.price ?? 0;
+                  const optionDiscount = option?.discountPercent ?? 0;
 
-          if (Array.isArray(item.options)) {
-            item.options.forEach((option) => {
-              const optionPrice = option.price ?? 0;
-              const optionDiscount = option.discountPercent ?? 0;
-              const optionCount = option.count ?? 1;
+                  const discountedOptionPrice =
+                    optionPrice - (optionPrice * optionDiscount) / 100;
 
-              const discountedOptionPrice =
-                optionPrice - (optionPrice * optionDiscount) / 100;
+                  optionsTotal += discountedOptionPrice * optionCount;
+                }
+              });
+            }
 
-              optionsTotal += discountedOptionPrice * optionCount;
-            });
+            itemsPrice += itemTotal + optionsTotal;
           }
-
-          itemsPrice += itemTotal + optionsTotal;
         });
+      }
 
-        if (
-          state?.store?.taxEnabled &&
-          !state?.store?.taxIncluded &&
-          Number(state?.store?.taxPercent) &&
-          state.store.taxPercent > 0
-        ) {
-          taxPrice = (itemsPrice * state.store.taxPercent) / 100;
-        }
+      if (
+        state?.store?.taxEnabled &&
+        !state?.store?.taxIncluded &&
+        Number(state?.store?.taxPercent) &&
+        state.store.taxPercent > 0
+      ) {
+        taxPrice = (itemsPrice * state.store.taxPercent) / 100;
       }
 
       return {

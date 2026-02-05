@@ -35,11 +35,8 @@ export default function SelectedItemsList({ lng, storeCurrency }) {
               {item.options.map((option) => {
                 if (option.count <= 0 || !option?.isActive) return undefined;
                 return (
-                  <div className='my-auto border-top py-2'>
-                    <div
-                      key={option.id}
-                      className='d-flex align-items-center justify-content-between'
-                    >
+                  <div key={option.id} className='my-auto border-top py-2'>
+                    <div className='d-flex align-items-center justify-content-between'>
                       <div className='d-flex align-items-baseline gap-1 m-0'>
                         {option.isRequired && (
                           <i className='d-flex align-items-center fs-11 bi bi-asterisk text-danger'></i>

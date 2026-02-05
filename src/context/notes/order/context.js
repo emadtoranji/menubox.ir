@@ -6,8 +6,10 @@ import { createContext, useReducer, useEffect, useLayoutEffect } from 'react';
 export const OrderContext = createContext(null);
 
 export const initialOrderState = {
+  store: {},
   items: [],
   totalPrice: 0,
+  taxPrice: 0,
   note: '',
 };
 
@@ -15,6 +17,9 @@ export function orderReducer(state, action) {
   switch (action.type) {
     case 'HYDRATE':
       return action.payload;
+
+    case 'SET_STORE':
+      return { ...state, store: action.payload };
 
     case 'SET_NOTE':
       return { ...state, note: action.payload };
@@ -79,40 +84,58 @@ export function orderReducer(state, action) {
       };
 
     case 'UPDATE_TOTAL_PRICE': {
-      let finalPrice = 0;
+      let itemsPrice = 0;
+      let taxPrice = 0;
+      if (Array.isArray(state.items)) {
+        state.items.forEach((item) => {
+          const quantity = item.quantity ?? 0;
 
-      state.items.forEach((item) => {
-        const quantity = item.quantity ?? 0;
+          const itemDiscount = item.discountPercent ?? 0;
+          const discountedItemPrice =
+            item.price - (item.price * itemDiscount) / 100;
 
-        const itemDiscount = item.discountPercent ?? 0;
-        const discountedItemPrice =
-          item.price - (item.price * itemDiscount) / 100;
+          const itemTotal = discountedItemPrice * quantity;
 
-        const itemTotal = discountedItemPrice * quantity;
+          let optionsTotal = 0;
 
-        let optionsTotal = 0;
+          if (Array.isArray(item.options)) {
+            item.options.forEach((option) => {
+              const optionPrice = option.price ?? 0;
+              const optionDiscount = option.discountPercent ?? 0;
+              const optionCount = option.count ?? 1;
 
-        if (Array.isArray(item.options)) {
-          item.options.forEach((option) => {
-            const optionPrice = option.price ?? 0;
-            const optionDiscount = option.discountPercent ?? 0;
-            const optionCount = option.count ?? 1;
+              const discountedOptionPrice =
+                optionPrice - (optionPrice * optionDiscount) / 100;
 
-            const discountedOptionPrice =
-              optionPrice - (optionPrice * optionDiscount) / 100;
+              optionsTotal += discountedOptionPrice * optionCount;
+            });
+          }
 
-            optionsTotal += discountedOptionPrice * optionCount;
-          });
+          itemsPrice += itemTotal + optionsTotal;
+        });
+
+        if (
+          state?.store?.taxEnabled &&
+          !state?.store?.taxIncluded &&
+          Number(state?.store?.taxPercent) &&
+          state.store.taxPercent > 0
+        ) {
+          taxPrice = (itemsPrice * state.store.taxPercent) / 100;
         }
+      }
 
-        finalPrice += itemTotal + optionsTotal;
-      });
-
-      return { ...state, totalPrice: finalPrice };
+      return {
+        ...state,
+        taxPrice,
+        itemsPrice,
+        totalPrice: itemsPrice + taxPrice,
+      };
     }
 
-    case 'RESET':
     case 'RESET_ORDER':
+      return { ...initialOrderState, store: state.store };
+
+    case 'RESET_STATE':
       return initialOrderState;
 
     default:

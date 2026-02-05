@@ -29,6 +29,9 @@ const getStoresCached = ({ page = 1, slug = '', search = '' }) =>
               description: true,
               slug: true,
               currency: true,
+              taxEnabled: true,
+              taxIncluded: true,
+              taxPercent: true,
               location: {
                 select: {
                   countryLocal: true,

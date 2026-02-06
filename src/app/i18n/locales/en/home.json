@@ -1,1 +1,38 @@
-{}
+{
+  "intro": {
+    "title": "Digital Menu, Simple and Smart",
+    "text": "MenuGardi helps food businesses provide their menus to customers digitally, quickly and always up-to-date without the need for paper menus.",
+    "intro-button": "Start",
+    "stores-button": "Stores"
+  },
+
+  "suitable-usage": {
+    "card1": {
+      "title": "Suitable for restaurants",
+      "text": "Whether you are a <strong>cafe</strong> or a <strong>restaurant</strong>, MenuGardi makes managing items and prices simple and fast."
+    },
+    "card2": {
+      "title": "Suitable for cafes and coffee shops",
+      "text": "Easily categorize and update your <strong>drinks</strong> and <strong>desserts</strong> menus with our simple panel."
+    },
+    "card3": {
+      "title": "Suitable for fast food and chains",
+      "text": "Manage items and prices for multiple <strong>branches</strong> simultaneously, with a few simple clicks."
+    }
+  },
+
+  "qrcode-usage": {
+    "title": "Unique barcode for each store and table",
+    "text": "The 'Menu Navigation' system allows each store and each table to have a unique barcode. In this way, each store can manage its digital menu independently and customers directly access the menu of the same table and store."
+  },
+
+  "dashboard-simple": {
+    "title": "Easy and fast management",
+    "text": "The simple and smooth Menu Navigation management panel allows you to edit items, change prices and keep the menu up to date at any time."
+  },
+
+  "migration-to-digital-menu": {
+    "title": "Cost Reduction",
+    "text": "By eliminating paper menus, you'll both save on printing costs and provide a more modern experience for your customers."
+  }
+}

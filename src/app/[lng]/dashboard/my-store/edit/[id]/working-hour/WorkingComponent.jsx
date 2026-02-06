@@ -21,15 +21,15 @@ function createDefaultDays(existing) {
 export default function WorkingComponent({ store }) {
   const { t } = useT('dashboard-my-store');
 
-  const DAY_LABELS = [
-    t('day-of-week.saturday'),
-    t('day-of-week.sunday'),
-    t('day-of-week.monday'),
-    t('day-of-week.tuesday'),
-    t('day-of-week.wednesday'),
-    t('day-of-week.thursday'),
-    t('day-of-week.friday'),
-  ];
+  const DAY_LABELS = {
+    0: t('day-of-week.sunday'),
+    1: t('day-of-week.monday'),
+    2: t('day-of-week.tuesday'),
+    3: t('day-of-week.wednesday'),
+    4: t('day-of-week.thursday'),
+    5: t('day-of-week.friday'),
+    6: t('day-of-week.saturday'),
+  };
 
   const [days, setDays] = useState(createDefaultDays(store?.workingHours));
   const [errors, setErrors] = useState({});

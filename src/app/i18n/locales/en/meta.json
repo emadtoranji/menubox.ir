@@ -70,6 +70,17 @@
     ],
     "category": "Password Reset"
   },
+  "faqs": {
+    "title": "Frequently Asked Questions | {{AppName}}",
+    "description": "An overview of {{AppName}} FAQs and a comprehensive guide to using the platform",
+    "keywords": [
+      "Frequently Asked Questions",
+      "{{AppName}} FAQs",
+      "{{AppName}} Guide",
+      "{{AppName}} FAQs"
+    ],
+    "category": "FAQs"
+  },
   "not-found": {
     "title": "404 - Page Not Found | {{AppName}}",
     "description": "The page you are looking for could not be found. The address may be incorrect or the page may have been deleted.",

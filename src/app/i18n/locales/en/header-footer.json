@@ -1,6 +1,6 @@
 {
   "footer": {
-    "brand": "MenuGard",
+    "brand": "MenuGardi",
     "description": "A platform for managing stores and digitizing catalogs and products",
     "quick_links": {
       "title": "Quick Links",
@@ -15,7 +15,7 @@
     "language": {
       "title": "Change Language"
     },
-    "copy": "© {{year}} MenuGard — Made for you with love and creativity ❤️",
+    "copy": "© {{year}} MenuGardi — Made for you with love and creativity ❤️",
     "terms": "Terms of Use",
     "privacy": "Privacy",
     "cookies": "Cookies"

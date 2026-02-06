@@ -1,6 +1,6 @@
 {
   "general": {
-    "app-name": "MenuGard",
+    "app-name": "MenuGardi",
     "billion": "billion",
     "million": "million",
     "kilo": "thousand",
@@ -32,7 +32,7 @@
     "unknown-problem": "An unknown problem has occurred, please try again."
   },
   "reset-password-email-html": {
-    "company": "MenuGard",
+    "company": "MenuGardi",
     "subject": "Reset Password",
     "hi": "Hello",
     "description": "A password reset request has been submitted for your account",

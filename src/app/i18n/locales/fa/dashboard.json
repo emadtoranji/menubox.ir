@@ -2,7 +2,7 @@
   "dashboard": {
     "login": {
       "login-success": "با موفقیت وارد شدید",
-      "title": "منو گرد - مدیریت فروشگاه",
+      "title": "منوگردی - مدیریت فروشگاه",
       "email": "ایمیل",
       "email-placeholder": "ایمیل خود را وارد کنید",
       "password": "رمز عبور",

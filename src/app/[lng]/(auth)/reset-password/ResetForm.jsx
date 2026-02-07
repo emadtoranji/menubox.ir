@@ -38,12 +38,12 @@ export default function ResetForm({ hasAccess, currentLang = undefined }) {
 
       if (data.ok) {
         toast.success(
-          t(`code-responses.${data?.message}`, '') || 'Check Email'
+          t(`code-responses.${data?.message}`, '') || 'Check Email',
         );
       } else {
         toast.error(
           t(`code-responses.${data?.message}`, '') ||
-            t(`general.unknown-problem`)
+            t(`general.unknown-problem`),
         );
       }
     } catch {
@@ -64,6 +64,7 @@ export default function ResetForm({ hasAccess, currentLang = undefined }) {
 
       <div className='mt-3'>
         <input
+          name='email'
           style={{ direction: 'ltr', textAlign: 'left' }}
           type='email'
           value={email}
@@ -71,8 +72,8 @@ export default function ResetForm({ hasAccess, currentLang = undefined }) {
             emailValid === null
               ? 'border-secondary'
               : emailValid
-              ? 'border-success'
-              : 'border-danger'
+                ? 'border-success'
+                : 'border-danger'
           } w-100`}
           onChange={(e) => setEmail(e.target.value)}
           placeholder=''

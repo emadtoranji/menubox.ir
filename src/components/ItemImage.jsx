@@ -1,41 +1,66 @@
 'use client';
 
-import Image from 'next/image';
-import { useState } from 'react';
+import NextImage from 'next/image';
+import { useEffect, useState } from 'react';
+import Spinner from './Spinner';
 
 export default function ItemImage({
   category,
   title,
-  defaultImage = null,
+  defaultImage = '/images/app-logo.webp',
   width = 100,
   height = 100,
   objectFit = 'contain',
 }) {
   const basePath = category ? `/images/items/${category}` : null;
-  if (!defaultImage) {
-    defaultImage = '/images/app-logo.webp';
-  }
 
   const sources = basePath
     ? [`${basePath}.svg`, `${basePath}.webp`, `${basePath}.png`, defaultImage]
     : [defaultImage];
 
-  const [srcIndex, setSrcIndex] = useState(0);
+  const [finalSrc, setFinalSrc] = useState(null);
+
+  useEffect(() => {
+    let isMounted = true;
+
+    const checkImage = (index) => {
+      if (index >= sources.length) return;
+
+      const img = document.createElement('img');
+      img.src = sources[index];
+      img.onload = () => {
+        if (isMounted) setFinalSrc(sources[index]);
+      };
+      img.onerror = () => checkImage(index + 1);
+    };
+
+    checkImage(0);
+
+    return () => {
+      isMounted = false;
+    };
+  }, [sources]);
+
+  if (!finalSrc) {
+    return (
+      <div
+        className='d-flex align-items-center m-auto'
+        style={{ width, height }}
+      >
+        <Spinner type='grow' />
+      </div>
+    );
+  }
 
   return (
-    <Image
+    <NextImage
       className='rounded p-1'
-      src={sources[srcIndex]}
+      src={finalSrc}
       alt={title}
       width={width}
       height={height}
       style={{ objectFit }}
       loading='eager'
-      onError={() => {
-        if (srcIndex < sources.length - 1) {
-          setSrcIndex(srcIndex + 1);
-        }
-      }}
     />
   );
 }

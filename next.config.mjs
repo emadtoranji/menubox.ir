@@ -23,33 +23,13 @@ const nextConfig = {
       revalidate: hourToSecond(12),
       expire: dayToSecond(31),
     },
-    '/[lng]/[...rest]': {
+    '/[lng]/(components)/footer': {
       stale: dayToSecond(1),
-      revalidate: dayToSecond(3),
-      expire: dayToSecond(14),
-    },
-    '/[lng]/(home)': {
-      stale: dayToSecond(7),
       revalidate: dayToSecond(30),
       expire: dayToSecond(60),
     },
-    '/[lng]/dashboard/finance': {
-      stale: 60, // 60 seconds
-      revalidate: 60, // 60 seconds
-      expire: hourToSecond(1),
-    },
-    '/[lng]/dashboard/requests': {
-      stale: 600, // 10 minutes
-      revalidate: 1800, // 30 minutes
-      expire: hourToSecond(3),
-    },
-    '/[lng]/dashboard/my-store': {
-      stale: 60, // 1 minute
-      revalidate: 1800, // 30 minutes
-      expire: hourToSecond(3),
-    },
-    '/[lng]/(components)/footer': {
-      stale: dayToSecond(1),
+    '/[lng]/(home)': {
+      stale: dayToSecond(7),
       revalidate: dayToSecond(30),
       expire: dayToSecond(60),
     },
@@ -58,7 +38,37 @@ const nextConfig = {
       revalidate: hourToSecond(3),
       expire: hourToSecond(6),
     },
-    '/[lng]/(store)/(one-store)/[slug]': {
+    '/[lng]/(store)/(one-store)/store/[slug]': {
+      stale: hourToSecond(1),
+      revalidate: hourToSecond(3),
+      expire: hourToSecond(6),
+    },
+    '/[lng]/[...rest]': {
+      stale: dayToSecond(1),
+      revalidate: dayToSecond(3),
+      expire: dayToSecond(14),
+    },
+    '/[lng]/dashboard/(overview)': {
+      stale: 600, // 10 minutes
+      revalidate: 1800, // 30 minutes
+      expire: hourToSecond(3),
+    },
+    '/[lng]/dashboard/finance': {
+      stale: 60, // 60 seconds
+      revalidate: 60, // 60 seconds
+      expire: hourToSecond(1),
+    },
+    '/[lng]/dashboard/my-store': {
+      stale: 60, // 1 minute
+      revalidate: 1800, // 30 minutes
+      expire: hourToSecond(3),
+    },
+    '/[lng]/dashboard/faqs': {
+      stale: dayToSecond(1),
+      revalidate: dayToSecond(30),
+      expire: dayToSecond(60),
+    },
+    '/[lng]/manifest.json': {
       stale: hourToSecond(1),
       revalidate: hourToSecond(3),
       expire: hourToSecond(6),

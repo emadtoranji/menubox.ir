@@ -38,7 +38,7 @@ export default async function StoreCard({ lng, store }) {
                 {store.categories.map((category) => {
                   return (
                     <span
-                      key={`${store.id}-${category}`}
+                      key={`${store.id}-${category.key}`}
                       className='badge btn-active'
                     >
                       <small className='text-capitalize'>

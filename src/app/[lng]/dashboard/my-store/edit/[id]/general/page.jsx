@@ -43,13 +43,12 @@ export default async function Index({ params }) {
       },
       where: {
         id: String(id),
-        userId,
       },
     });
   } catch {
     store = {};
   }
-  if (!store || !store?.id) {
+  if (!store || !store?.id || store.userId !== userId) {
     return <StoreNotFound />;
   }
 

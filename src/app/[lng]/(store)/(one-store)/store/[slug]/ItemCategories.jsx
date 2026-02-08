@@ -24,6 +24,7 @@ export default function ItemCategories({
             style={{ color: 'inherit' }}
             className={`text-nowrap btn btn-lg ${activeCategory === null ? 'opacity-100' : 'opacity-75'}`}
           >
+            <span className='visually-hidden'>All</span>
             <span>{t('all-categories')}</span>
           </button>
 
@@ -35,6 +36,7 @@ export default function ItemCategories({
               style={{ color: 'inherit' }}
               className={`text-nowrap btn btn-lg ${activeCategory === category ? 'opacity-100' : 'opacity-75'}`}
             >
+              <span className='visually-hidden'>{category}</span>
               <span className='text-capitalize'>{t(category, category)}</span>
             </button>
           ))}

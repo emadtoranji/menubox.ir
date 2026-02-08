@@ -33,6 +33,9 @@ function ChangeByButton({
           disabled={true}
         >
           {LiTitle}
+          <span className='visually-hidden'>
+            {isNext ? 'Next Button' : 'Prev Button'}
+          </span>
         </button>
       ) : (
         <Link

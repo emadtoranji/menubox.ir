@@ -33,7 +33,7 @@ export default function ItemCategories({
               key={`item-category-${category}`}
               onClick={() => setActiveCategory(category)}
               style={{ color: 'inherit' }}
-              className={`btn btn-lg ${activeCategory === category ? 'opacity-100' : 'opacity-75'}`}
+              className={`text-nowrap btn btn-lg ${activeCategory === category ? 'opacity-100' : 'opacity-75'}`}
             >
               <span className='text-capitalize'>{t(category, category)}</span>
             </button>

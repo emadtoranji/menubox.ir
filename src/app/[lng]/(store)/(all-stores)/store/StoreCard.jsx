@@ -28,7 +28,7 @@ export default async function StoreCard({ lng, store }) {
               width={150}
               style={{ objectFit: 'contain' }}
               alt={`${store.name} Logo`}
-              loading='eager'
+              loading='lazy'
             />
             <p className={`h6 fw-normal mb-4 flex-grow-1 text-justify fw-bold`}>
               {domPurifyServer(store?.description || '')}

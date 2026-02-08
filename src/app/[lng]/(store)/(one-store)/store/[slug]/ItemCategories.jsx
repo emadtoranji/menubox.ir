@@ -22,7 +22,7 @@ export default function ItemCategories({
             type='button'
             onClick={() => setActiveCategory(null)}
             style={{ color: 'inherit' }}
-            className={`btn btn-lg ${activeCategory === null ? 'opacity-100' : 'opacity-75'}`}
+            className={`text-nowrap btn btn-lg ${activeCategory === null ? 'opacity-100' : 'opacity-75'}`}
           >
             <span>{t('all-categories')}</span>
           </button>
@@ -33,14 +33,14 @@ export default function ItemCategories({
               key={`item-category-${category}`}
               onClick={() => setActiveCategory(category)}
               style={{ color: 'inherit' }}
-              className={`btn btn-lg ${activeCategory === category ? 'opacity-100' : 'opacity-75'}`}
+              className={`text-nowrap btn btn-lg ${activeCategory === category ? 'opacity-100' : 'opacity-75'}`}
             >
               <span className='text-capitalize'>{t(category, category)}</span>
             </button>
           ))}
         </div>
       </div>
-      <div style={{ marginTop: '3rem' }}></div>
+      <div style={{ marginTop: '4rem' }}></div>
       <WorkingTime />
     </>
   );

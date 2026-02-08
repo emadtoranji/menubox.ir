@@ -180,7 +180,7 @@ export function OrderProvider({ children, store }) {
 
   useEffect(() => {
     if (typeof store === 'object') {
-      if (typeof state?.store !== 'object')
+      if (typeof state?.store !== 'object' || !state.store?.id)
         dispatch({ type: 'SET_STORE', payload: store });
     } else {
       return;

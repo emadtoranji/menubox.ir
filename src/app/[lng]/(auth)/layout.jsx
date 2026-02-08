@@ -4,7 +4,7 @@ import Header from '../(components)/header';
 
 export async function generateMetadata(props) {
   const m = await import('@utils/metadata');
-  return m.generateMetadata(props, { forcedPage: 'signin' });
+  return await m.generateMetadata(props, { forcedPage: 'signin' });
 }
 
 export default async function layout({ children, params }) {

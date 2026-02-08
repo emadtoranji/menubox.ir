@@ -1,14 +1,14 @@
 import { getT } from '@i18n/server';
 import Link from 'next/link';
 
-export const generateMetadata = (props) =>
-  import('@utils/metadata').then((m) =>
-    m.generateMetadata(props, {
-      forcedPage: 'verify-email',
-      robotsFollow: false,
-      robotsIndex: false,
-    })
-  );
+export async function generateMetadata(props) {
+  const m = await import('@utils/metadata');
+  return await m.generateMetadata(props, {
+    forcedPage: 'verify-email',
+    robotsFollow: false,
+    robotsIndex: false,
+  });
+}
 
 export default async function Index({ params, searchParams }) {
   const { lng } = await params;

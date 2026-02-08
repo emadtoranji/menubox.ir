@@ -6,7 +6,7 @@ import './style.css';
 
 export async function generateMetadata(props) {
   const m = await import('@utils/metadata');
-  return m.generateMetadata(props, { forcedPage: 'store' });
+  return await m.generateMetadata(props, { forcedPage: 'store' });
 }
 
 export default async function Layout({ children, params }) {

@@ -5,7 +5,7 @@ import { getT } from '@i18n/server';
 
 export async function generateMetadata(props) {
   const m = await import('@utils/metadata');
-  return m.generateMetadata(props, { forcedPage: 'faqs' });
+  return await m.generateMetadata(props, { forcedPage: 'faqs' });
 }
 
 export default async function Layout({ children, params }) {

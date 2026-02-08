@@ -5,15 +5,15 @@ import ItemCategories from './ItemCategories';
 import ItemContent from './ItemContent';
 import StoreIntro from './StoreIntro';
 import { OrderProvider } from '@context/notes/order/context';
-import SetStoreToContext from './SetStoreToContext';
+import Loading from '@app/loading';
 
 export default function StoreComponent({ store }) {
   const [activeCategory, setActiveCategory] = useState(null);
   const defaultLogoUrl = '/images/app-logo.webp';
+  if (!store) return <Loading />;
 
   return (
-    <OrderProvider>
-      <SetStoreToContext store={store} />
+    <OrderProvider store={store}>
       <ItemCategories
         activeCategory={activeCategory}
         setActiveCategory={setActiveCategory}

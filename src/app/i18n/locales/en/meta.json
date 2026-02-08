@@ -86,5 +86,23 @@
     "description": "The page you are looking for could not be found. The address may be incorrect or the page may have been deleted.",
     "keywords": ["404", "Page Not Found", "404 Error {{AppName}}"],
     "category": "Error Page"
+  },
+  "store": {
+    "title": "{{AppName}} — Stores",
+    "description": "A platform for managing stores and digitizing catalogs and products. | {{AppName}}",
+    "keywords": [
+      "platform",
+      "managing stores",
+      "digital",
+      "digitizing",
+      "catalogs",
+      "products",
+      "store",
+      "cafe",
+      "restaurant",
+      "food truck",
+      "fast food"
+    ],
+    "category": "A Platform for Managing Stores"
   }
 }

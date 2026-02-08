@@ -28,7 +28,11 @@ export function orderReducer(state, action) {
       return { ...state, note: action.payload };
 
     case 'ADD_ITEM':
-      return { ...state, items: [...state.items, action.payload] };
+      return {
+        ...state,
+        items: [...state.items, action.payload],
+        initDate: Date.now(),
+      };
 
     case 'UPDATE_ITEM':
       return {
@@ -36,12 +40,14 @@ export function orderReducer(state, action) {
         items: state.items.map((i) =>
           i.id === action.payload.id ? { ...i, ...action.payload } : i,
         ),
+        initDate: Date.now(),
       };
 
     case 'REMOVE_ITEM':
       return {
         ...state,
         items: state.items.filter((i) => i.id !== action.payload),
+        initDate: Date.now(),
       };
 
     case 'ADD_OPTION':
@@ -52,6 +58,7 @@ export function orderReducer(state, action) {
             ? { ...i, options: [...(i.options || []), action.payload.option] }
             : i,
         ),
+        initDate: Date.now(),
       };
 
     case 'UPDATE_OPTION':
@@ -69,6 +76,7 @@ export function orderReducer(state, action) {
               }
             : i,
         ),
+        initDate: Date.now(),
       };
 
     case 'REMOVE_OPTION':
@@ -84,6 +92,7 @@ export function orderReducer(state, action) {
               }
             : i,
         ),
+        initDate: Date.now(),
       };
 
     case 'UPDATE_TOTAL_PRICE': {
@@ -134,6 +143,7 @@ export function orderReducer(state, action) {
         taxPrice,
         itemsPrice,
         totalPrice: itemsPrice + taxPrice,
+        initDate: Date.now(),
       };
     }
 

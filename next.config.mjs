@@ -80,7 +80,7 @@ const nextConfig = {
   compress: true,
 
   compiler: {
-    removeConsole: process.env.NODE_ENV === 'production',
+    removeConsole: isProduction,
   },
 
   async headers() {

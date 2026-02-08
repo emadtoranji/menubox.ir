@@ -1,6 +1,8 @@
 'use client';
 
 import Loading from '@components/Loading/client';
+import { STORE_CONTEXT_HOURS_FRESH } from '@utils/globalSettings';
+import { hourToSecond } from '@utils/numbers';
 import { createContext, useReducer, useEffect, useLayoutEffect } from 'react';
 
 export const OrderContext = createContext(null);
@@ -10,6 +12,7 @@ export const initialOrderState = {
   items: [],
   totalPrice: 0,
   taxPrice: 0,
+  initDate: Date.now(),
   note: '',
 };
 
@@ -165,7 +168,20 @@ export function OrderProvider({ children }) {
     const saved = localStorage.getItem('orderState');
     const parsed = safeParseOrder(saved);
     if (parsed) {
-      dispatch({ type: 'HYDRATE', payload: parsed });
+      const initDate = parseInt(parsed?.initDate) || 0;
+      let contextIsFresh = true;
+      const nowDate = Date.now();
+      if (
+        initDate + hourToSecond(STORE_CONTEXT_HOURS_FRESH) * 1000 <=
+        nowDate
+      ) {
+        contextIsFresh = false;
+      }
+
+      dispatch({
+        type: 'HYDRATE',
+        payload: contextIsFresh ? parsed : initialOrderState,
+      });
     } else {
       dispatch({ type: 'HYDRATE', payload: initialOrderState });
     }

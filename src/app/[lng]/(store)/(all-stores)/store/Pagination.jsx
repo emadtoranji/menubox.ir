@@ -1,6 +1,15 @@
+import { getT } from '@i18n/server';
+import { formatNumber } from '@utils/numbers';
 import Link from 'next/link';
 
-export function Pagination({ current_page, total_pages, lng, slug, search }) {
+export async function Pagination({
+  current_page,
+  total_pages,
+  lng,
+  slug,
+  search,
+}) {
+  const { t } = await getT(lng, 'store');
   const range = 2;
 
   const pages = [];
@@ -20,83 +29,94 @@ export function Pagination({ current_page, total_pages, lng, slug, search }) {
     ? `?${queryParams.toString()}&`
     : '?';
 
-  return (
-    <div className='container my-5'>
-      <nav aria-label='Pagination'>
-        <ul className='pagination pagination-sm justify-content-center align-items-center gap-1 fs-5 fs-lg-6'>
-          <li className={`page-item ${current_page === 1 ? 'disabled' : ''}`}>
-            <Link
-              className='page-link rounded-pill px-3 mx-1 fw-bolder'
-              href={`${baseHref}${queryString}page=${current_page - 1}`}
-            >
-              ‹
-            </Link>
-          </li>
+  const isRTL = ['fa', 'ar'].includes(lng);
 
-          {current_page > range + 1 && (
-            <>
-              <li className='page-item'>
-                <Link
-                  className='page-link rounded-circle px-3'
-                  href={`${baseHref}${queryString}page=1`}
-                >
-                  1
-                </Link>
-              </li>
-              <li className='page-item disabled'>
-                <span className='page-link'>…</span>
-              </li>
-            </>
-          )}
+  function ChangeByButton({ isNext = null }) {
+    if (isNext === null) return undefined;
 
-          {pages.map((p) => (
-            <li
-              key={p}
-              className={`page-item ${p === current_page ? 'active' : ''}`}
-            >
-              {p === current_page ? (
-                <span className='page-link btn-active rounded-circle fw-semibold'>
-                  {p}
-                </span>
-              ) : (
-                <Link
-                  className='page-link rounded-circle px-3'
-                  href={`${baseHref}${queryString}page=${p}`}
-                >
-                  {p}
-                </Link>
-              )}
-            </li>
-          ))}
+    let isDisabled = current_page === total_pages;
+    if (!isDisabled) {
+      if (!isNext && current_page === 1) {
+        isDisabled = true;
+      } else if (isNext && current_page >= total_pages) {
+        isDisabled = true;
+      }
+    }
 
-          {current_page < total_pages - range && (
-            <>
-              <li className='page-item disabled'>
-                <span className='page-link'>…</span>
-              </li>
-              <li className='page-item'>
-                <Link
-                  className='page-link rounded-circle px-3'
-                  href={`${baseHref}${queryString}page=${total_pages}`}
-                >
-                  {total_pages}
-                </Link>
-              </li>
-            </>
-          )}
+    const LiclassName = `text-active border-0 fw-bolder mx-md-1 mx-xl-2`;
+    const LiTitle = <span>{isNext ? t('next') : t('prev')}</span>;
 
-          <li
-            className={`page-item ${
-              current_page === total_pages ? 'disabled' : ''
-            }`}
+    return (
+      <li>
+        {isDisabled ? (
+          <button
+            type='button'
+            className={`btn ${LiclassName} disabled opacity-50`}
+            disabled={true}
           >
-            <Link
-              className='page-link rounded-pill px-3 mx-1 fw-bolder'
-              href={`${baseHref}${queryString}page=${current_page + 1}`}
-            >
-              ›
-            </Link>
-          </li>
+            {LiTitle}
+          </button>
+        ) : (
+          <Link
+            className={LiclassName}
+            href={`${baseHref}${queryString}page=${isNext ? current_page + 1 : current_page - 1}`}
+          >
+            {LiTitle}
+          </Link>
+        )}
+      </li>
+    );
+  }
+
+  function NumberButtons({ page = undefined, isActive = false }) {
+    if (page === undefined) return undefined;
+    return (
+      <li className=''>
+        <Link
+          className={`py-2 px-3 rounded ${isActive ? 'shadow fw-bold' : ''}`}
+          href={`${baseHref}${queryString}page=${page}`}
+        >
+          <span>{formatNumber(page, lng)}</span>
+        </Link>
+      </li>
+    );
+  }
+
+  function DisabledButton() {
+    return (
+      <li className='disabled'>
+        <span className=''>…</span>
+      </li>
+    );
+  }
+
+  return (
+    <div className='container-fluid container-md mx-0 mx-md-auto px-1 px-md-1 px-lg-2 px-xl-3 px-xxl-4 mt-5'>
+      <nav aria-label='Pagination'>
+        <ul className='pagination pagination-sm d-flex justify-content-between align-items-center gap-1 fs-7 bg-light rounded shadow text-active px-0 py-2'>
+          <ChangeByButton isNext={false} />
+
+          <div className='d-flex justify-content-center align-items-center gap-1 gap-md-2'>
+            {current_page > range + 1 && (
+              <>
+                <NumberButtons page={1} />
+                <DisabledButton />
+              </>
+            )}
+
+            {pages.map((p) => (
+              <NumberButtons key={p} page={p} isActive={p === current_page} />
+            ))}
+
+            {current_page < total_pages - range && (
+              <>
+                <DisabledButton />
+                <NumberButtons page={total_pages} />
+              </>
+            )}
+          </div>
+
+          <ChangeByButton isNext={true} />
         </ul>
       </nav>
     </div>

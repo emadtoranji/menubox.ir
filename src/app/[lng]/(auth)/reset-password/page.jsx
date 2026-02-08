@@ -2,14 +2,14 @@ import ResetForm from './ResetForm';
 import CheckToken from './CheckToken';
 import hasSession from '@utils/auth/hasSession';
 
-export const generateMetadata = (props) =>
-  import('@utils/metadata').then((m) =>
-    m.generateMetadata(props, {
-      forcedPage: 'reset-password',
-      robotsFollow: false,
-      robotsIndex: false,
-    }),
-  );
+export async function generateMetadata(props) {
+  const m = await import('@utils/metadata');
+  return await m.generateMetadata(props, {
+    forcedPage: 'reset-password',
+    robotsFollow: false,
+    robotsIndex: false,
+  });
+}
 
 export default async function ResetPassword({ params, searchParams }) {
   const { lng } = await params;

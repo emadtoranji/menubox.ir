@@ -4,8 +4,9 @@ import hasSession from '@utils/auth/hasSession';
 
 export async function generateMetadata(props) {
   const m = await import('@utils/metadata');
-  return m.generateMetadata(props, { forcedPage: 'signin' });
+  return await m.generateMetadata(props, { forcedPage: 'signin' });
 }
+
 export default async function Index({ params }) {
   const hasAccess = await hasSession();
   if (hasAccess) {

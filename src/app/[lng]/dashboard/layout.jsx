@@ -6,7 +6,7 @@ import Main from '@components/Main';
 
 export async function generateMetadata(props) {
   const m = await import('@utils/metadata');
-  return m.generateMetadata(props, { forcedPage: 'dashboard' });
+  return await m.generateMetadata(props, { forcedPage: 'dashboard' });
 }
 
 export default async function LayoutDashboard({ children, params }) {

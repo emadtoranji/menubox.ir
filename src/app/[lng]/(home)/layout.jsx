@@ -3,7 +3,7 @@ import Footer from '../(components)/footer';
 
 export async function generateMetadata(props) {
   const m = await import('@utils/metadata');
-  return m.generateMetadata(props, { forcedPage: 'home' });
+  return await m.generateMetadata(props, { forcedPage: 'home' });
 }
 
 export default async function Layout({ children, params }) {

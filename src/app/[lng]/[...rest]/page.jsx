@@ -5,7 +5,7 @@ import Header from '../(components)/header';
 
 export async function generateMetadata(props) {
   const m = await import('@utils/metadata');
-  return m.generateMetadata(props, {
+  return await m.generateMetadata(props, {
     forcedPage: 'not-found',
     robotsFollow: false,
     robotsIndex: false,

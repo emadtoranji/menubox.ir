@@ -22,7 +22,7 @@ export default function ItemCategories({
             type='button'
             onClick={() => setActiveCategory(null)}
             style={{ color: 'inherit' }}
-            className={`btn btn-lg ${activeCategory === null ? 'opacity-100' : 'opacity-75'}`}
+            className={`text-nowrap btn btn-lg ${activeCategory === null ? 'opacity-100' : 'opacity-75'}`}
           >
             <span>{t('all-categories')}</span>
           </button>

@@ -48,6 +48,7 @@ export default function OptionQuantityButton({ item = null, option }) {
 
   return !isOrderableOption ? (
     <button type='button' className='btn btn-danger btn-sm' disabled>
+      <span className='visually-hidden'>Is Not Active</span>
       {t('is-not-active')}
     </button>
   ) : isRequiredAndIsSimple ? (
@@ -56,6 +57,7 @@ export default function OptionQuantityButton({ item = null, option }) {
       className='d-flex gap-1 align-items-center btn btn-active p-2'
       disabled
     >
+      <span className='visually-hidden'>Is Requried</span>
       <i className='d-flex align-items-center bi bi-check2-circle'></i>
       <span className='d-none'>{t('is-required')}</span>
     </button>
@@ -72,6 +74,7 @@ export default function OptionQuantityButton({ item = null, option }) {
         })
       }
     >
+      <span className='visually-hidden'>Add Option</span>
       <i className='d-flex align-items-center bi bi-plus-lg'></i>
       <span className='d-none'>{t('add-option')}</span>
     </button>
@@ -88,6 +91,7 @@ export default function OptionQuantityButton({ item = null, option }) {
         })
       }
     >
+      <span className='visually-hidden'>Remove Option</span>
       <i className='d-flex align-items-center bi bi-trash3'></i>
       <span className='d-none'>{t('remove-option')}</span>
     </button>
@@ -106,7 +110,8 @@ export default function OptionQuantityButton({ item = null, option }) {
           })
         }
       >
-        +
+        <span className='visually-hidden'>Add Option</span>
+        <span>+</span>
       </button>
 
       <span className='small fw-bold border-start border-end px-2 px-lg-3'>
@@ -126,7 +131,8 @@ export default function OptionQuantityButton({ item = null, option }) {
           })
         }
       >
-        -
+        <span className='visually-hidden'>Remove Option</span>
+        <span>-</span>
       </button>
     </div>
   );

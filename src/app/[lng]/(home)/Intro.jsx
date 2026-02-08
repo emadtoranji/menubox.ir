@@ -34,12 +34,14 @@ export default async function Intro({ lng }) {
               href={`/${lng}/dashboard`}
               className='btn btn-active btn-lg w-100'
             >
+              <span className='visually-hidden'>Intro (Dashboard)</span>
               {t('intro.intro-button')}
             </Link>
             <Link
               href={`/${lng}/store`}
               className='btn btn-inactive btn-lg w-100'
             >
+              <span className='visually-hidden'>Store</span>
               {t('intro.stores-button')}
             </Link>
           </div>

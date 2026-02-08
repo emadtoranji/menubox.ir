@@ -128,7 +128,7 @@
         "store-is-24-hour-open": "Store is open 24 hours on this day."
       }
     },
-    "open-section": "Login"
+    "open-section": "Enter"
   },
   "store-not-found": "Store not found"
 }

@@ -3,7 +3,7 @@
 import Loading from '@components/Loading/client';
 import { STORE_CONTEXT_HOURS_FRESH } from '@utils/globalSettings';
 import { hourToSecond } from '@utils/numbers';
-import { createContext, useReducer, useEffect, useLayoutEffect } from 'react';
+import { createContext, useReducer, useEffect, useState } from 'react';
 
 export const OrderContext = createContext(null);
 
@@ -22,7 +22,10 @@ export function orderReducer(state, action) {
       return action.payload;
 
     case 'SET_STORE':
-      return { ...state, store: action.payload };
+      return {
+        ...state,
+        store: action.payload,
+      };
 
     case 'SET_NOTE':
       return { ...state, note: action.payload };
@@ -148,7 +151,7 @@ export function orderReducer(state, action) {
     }
 
     case 'RESET_ORDER':
-      return { ...initialOrderState, store: state.store };
+      return { ...initialOrderState, store: state?.store || {} };
 
     case 'RESET_STATE':
       return initialOrderState;
@@ -171,11 +174,25 @@ function safeParseOrder(jsonString) {
   }
 }
 
-export function OrderProvider({ children }) {
+export function OrderProvider({ children, store }) {
   const [state, dispatch] = useReducer(orderReducer, null);
+  const [localStorageName, setLocalStorageName] = useState(null);
 
-  useLayoutEffect(() => {
-    const saved = localStorage.getItem('orderState');
+  useEffect(() => {
+    if (typeof store !== 'object') return;
+    setLocalStorageName(`orderState:${store?.id || 'global'}`);
+
+    if (typeof state?.store !== 'object') {
+      dispatch({ type: 'RESET_ORDER' });
+    }
+
+    dispatch({ type: 'SET_STORE', payload: store });
+  }, [store]);
+
+  useEffect(() => {
+    if (localStorageName === null) return;
+
+    const saved = localStorage.getItem(localStorageName);
     const parsed = safeParseOrder(saved);
     if (parsed) {
       const initDate = parseInt(parsed?.initDate) || 0;
@@ -195,20 +212,23 @@ export function OrderProvider({ children }) {
     } else {
       dispatch({ type: 'HYDRATE', payload: initialOrderState });
     }
-  }, []);
+  }, [localStorageName]);
 
   useEffect(() => {
+    if (localStorageName === null) return;
+
     if (typeof state?.items === 'object')
       dispatch({ type: 'UPDATE_TOTAL_PRICE' });
-  }, [state?.items]);
+  }, [state?.items, localStorageName]);
 
   useEffect(() => {
     if (state === null) return;
+    if (localStorageName === null) return;
 
     try {
-      localStorage.setItem('orderState', JSON.stringify(state));
+      localStorage.setItem(localStorageName, JSON.stringify(state));
     } catch {}
-  }, [state]);
+  }, [state, localStorageName]);
 
   if (state === null) return <Loading />;
 

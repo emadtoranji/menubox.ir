@@ -35,7 +35,7 @@ export default function WorkingTime() {
     } else {
       setMessage(null);
     }
-  }, [state?.store?.workingHours, dayOfWeekNow]);
+  }, [state?.store?.workingHours, dayOfWeekNow, t, lng]);
 
   return message ? (
     <div className='asiatech-font share-tech-font fst-italic text-dark d-flex justify-content-center'>

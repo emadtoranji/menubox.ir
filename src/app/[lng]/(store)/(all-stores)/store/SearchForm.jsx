@@ -39,7 +39,7 @@ export default function SearchForm({
   };
 
   return (
-    <div className='text-center mb-5 mt-2 position-relative overflow-hidden position-relative search-section text-light position-relative overflow-hidden'>
+    <div className='text-center position-relative overflow-hidden position-relative search-section text-light position-relative overflow-hidden'>
       <div className='d-flex justify-content-center align-items-center p-4'>
         <form
           className='d-flex justify-content-center w-100'
@@ -51,7 +51,7 @@ export default function SearchForm({
           <div className='search-container d-flex border border-2 border-white p-0 m-0 rounded-pill w-100 px-2'>
             <input
               type='text'
-              className='fs-5 search-input bg-transparent form-control rounded-0 border-0 border-light text-light'
+              className='fs-5 search-input bg-transparent form-control rounded-0 border-0 border-light text-active'
               placeholder={t('search-placeholder')}
               value={searchQuery}
               onChange={handleInputChange}
@@ -65,7 +65,7 @@ export default function SearchForm({
               disabled={searchQuery.length === 0}
             >
               <span className='visually-hidden'>Reset Search Input</span>
-              <i className='fs-5 bi bi-arrow-repeat '></i>
+              <i className='fs-5 bi bi-arrow-repeat text-active'></i>
             </button>
             <button
               type='submit'
@@ -75,14 +75,14 @@ export default function SearchForm({
               disabled={searchQuery.length === 0}
             >
               <span className='visually-hidden'>Submit Search</span>
-              <i className='fs-5 bi bi-search'></i>
+              <i className='fs-5 bi bi-search text-active'></i>
             </button>
           </div>
         </form>
       </div>
 
-      <div className='p-2 d-flex gap-2'>
-        <h1 className='fw-bold display-1 w-100'>
+      <div className='p-2 d-flex gap-2 d-none'>
+        <h1 className='fw-bold w-100 text-active'>
           <span>{title || t('title')}</span>
         </h1>
       </div>

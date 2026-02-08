@@ -40,7 +40,7 @@ export default function ItemCategories({
           ))}
         </div>
       </div>
-      <div style={{ marginTop: '3rem' }}></div>
+      <div style={{ marginTop: '4rem' }}></div>
       <WorkingTime />
     </>
   );

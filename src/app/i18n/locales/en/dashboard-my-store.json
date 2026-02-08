@@ -1,6 +1,6 @@
 {
   "key-names": {
-    "name": "Store name",
+    "name": "Store name (if you have registered another store, make sure this name is not duplicated)",
     "slug": "Store URL (to be displayed in the website address - English only)",
     "description": "Store description (brief description)",
     "categories": "What category is your store in?",
@@ -16,14 +16,18 @@
     "tax-included-yes": "Yes, the price listed includes Tax is also included",
     "tax-included-no": "No, the price listed does not include tax; it should be calculated and written separately",
     "tax-percent": "How much tax percentage do you charge?",
-    "is-active": "فروشگاه فعال باشد؟",
+    "is-active": "Is Store active?",
     "is-active-yes": "Yes, Activted and show publicly",
     "is-active-no": "No, Disabled and don't show publicly",
+    "is-branch": "Is this store a branch of another store?",
+    "is-branch-yes": "Yes, this store is a branch and should display products from another branch.",
+    "is-branch-yes-select-head-store": "Please select the main store from the list below:",
+    "is-branch-no": "No, this store is independent",
     "created-at": "Date the store was created",
     "updated-at": "Date the store was last updated"
   },
   "delete": {
-    "title": "Delete restaurant/cafe",
+    "title": "Delete Store",
     "subtitle": "You can delete your store in this section",
 
     "delete-description": "<p>Are you sure you want to delete the store '<b>{{name}}</b>'?</p>\n<p>By deleting the store, <strong>all products, customer information, store route, tables, barcodes, and related settings</strong> will be permanently deleted.</p>\n<p><strong>This action is irreversible</strong> and there is no way to recover the data after deletion.</p>\n<p>Please make sure of your decision before continuing.</p>",
@@ -40,14 +44,16 @@
   "delete-button": "Delete",
   "user-experience-button": "User Experience",
   "new": {
-    "title": "Register a new restaurant/cafe",
+    "title": "Register a new Store",
     "subtitle": "In this section you can register your new store",
     "submit-button": "Register a store",
     "inserted-successfully": "Your store has been successfully registered"
   },
   "edit": {
-    "title": "Edit Restaurant/Cafe",
+    "title": "Edit Store",
     "subtitle": "In this section you can edit the desired store",
+
+    "branch-store-cannot-be-modified-items": "Stores that are branches of another store cannot edit products and only display the parent store's products; you must edit products from the parent store.",
 
     "update-button": "Edit Store",
     "updated-successfully": "Your store has been successfully edited",
@@ -103,7 +109,7 @@
       },
       "tables": {
         "title": "Tables",
-        "description": "In this section you can customize the tables of your restaurant/cafe.",
+        "description": "In this section you can customize the tables of your Store.",
         "new-table-button": "Add new table",
         "table-name-title": "Table name (e.g. table number 1)",
         "is-active": "Table is active",

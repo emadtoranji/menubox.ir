@@ -43,6 +43,8 @@ export const POST = limited(async (req) => {
       currency,
       tax,
       isActive,
+      isBranchStore = false,
+      headBranchStoreId = undefined,
     } = await req.json();
 
     if (isNewStore == '0') {
@@ -79,6 +81,26 @@ export const POST = limited(async (req) => {
     tax.enable = toBoolean(tax.enable);
     tax.included = toBoolean(tax.included);
     isActive = toBoolean(isActive);
+    isBranchStore = toBoolean(isBranchStore);
+
+    if (isBranchStore) {
+      if (!isUUIDv4(headBranchStoreId)) {
+        return HandleResponse({
+          ok: false,
+          message: 'INVALID_INPUT',
+          status: 400,
+          devMessage: 'invalid head store UUID',
+        });
+      }
+      if (headBranchStoreId === id) {
+        return HandleResponse({
+          ok: false,
+          message: 'INVALID_INPUT',
+          status: 400,
+          devMessage: 'id and head store cannot be same',
+        });
+      }
+    }
 
     const validationErros = StoreValidationForm({
       name,
@@ -92,6 +114,8 @@ export const POST = limited(async (req) => {
       phone,
       currency,
       tax,
+      isBranchStore,
+      headBranchStoreId,
     });
 
     if (Object.keys(validationErros).length !== 0) {
@@ -173,6 +197,7 @@ export const POST = limited(async (req) => {
               taxIncluded: tax.included,
               taxPercent: tax.enable ? parseInt(tax?.percent || 0) : 0,
               isActive,
+              parentStoreId: isBranchStore ? headBranchStoreId : null,
             },
           });
 
@@ -218,6 +243,7 @@ export const POST = limited(async (req) => {
               taxIncluded: tax.included,
               taxPercent: tax.enable ? parseInt(tax?.percent || 0) : 0,
               isActive,
+              parentStoreId: isBranchStore ? headBranchStoreId : null,
             },
           });
 

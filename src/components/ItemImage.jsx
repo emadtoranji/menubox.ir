@@ -60,7 +60,7 @@ export default function ItemImage({
       width={width}
       height={height}
       style={{ objectFit }}
-      loading='eager'
+      loading='lazy'
     />
   );
 }

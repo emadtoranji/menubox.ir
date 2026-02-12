@@ -3,11 +3,17 @@ import { formatNumber } from '@utils/numbers';
 import CurrencySpan from './CurrencySpan';
 import { useParams } from 'next/navigation';
 import { fallbackLng } from '@i18n/settings';
+import Loading from '@app/loading';
+import { useOrder } from '@context/notes/order/useOrder';
 
-export default function ItemPrice({ item, storeCurrency }) {
+export default function ItemPrice({ item }) {
+  const { state } = useOrder();
+
+  if (state === null) return <Loading />;
+
   const lng = useParams()?.lng || fallbackLng;
   const freeSpan = <FreeSpanComponent additionalClass={'text-success'} />;
-  const currencySpan = <CurrencySpan storeCurrency={storeCurrency} />;
+  const currencySpan = <CurrencySpan storeCurrency={state.store.currency} />;
   const discontedPrice = item.price - (item.price * item.discountPercent) / 100;
 
   return (

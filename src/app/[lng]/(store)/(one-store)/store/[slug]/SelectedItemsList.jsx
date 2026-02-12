@@ -12,7 +12,7 @@ import OptionPrice from './OptionPrice';
 import { useParams } from 'next/navigation';
 import { fallbackLng } from '@i18n/settings';
 
-export default function SelectedItemsList({ storeCurrency }) {
+export default function SelectedItemsList() {
   const { state } = useOrder();
   const { t } = useT('store');
   const lng = useParams()?.lng || fallbackLng;
@@ -20,7 +20,7 @@ export default function SelectedItemsList({ storeCurrency }) {
   if (state === null) return <Loading />;
   if (!state?.items?.length) return <h3>{t('order-list-empty')}</h3>;
 
-  const currencySpan = <CurrencySpan storeCurrency={storeCurrency} />;
+  const currencySpan = <CurrencySpan storeCurrency={state.store.currency} />;
 
   return (
     <div className='container mx-auto grid grid-cols-1 gap-2'>
@@ -35,7 +35,7 @@ export default function SelectedItemsList({ storeCurrency }) {
               <ItemQuantityButton item={item} />
             </div>
 
-            <ItemPrice item={item} storeCurrency={storeCurrency} />
+            <ItemPrice item={item} storeCurrency={state.store.currency} />
 
             <div className='container mx-auto grid grid-cols-1 gap-2 pt-4'>
               {item.options.map((option) => {
@@ -53,7 +53,7 @@ export default function SelectedItemsList({ storeCurrency }) {
                         <div>{option.title}</div>
                         <OptionPrice
                           option={option}
-                          storeCurrency={storeCurrency}
+                          storeCurrency={state.store.currency}
                         />
                       </div>
                       <OptionQuantityButton item={item} option={option} />

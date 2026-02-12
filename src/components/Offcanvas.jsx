@@ -1,25 +1,11 @@
 'use client';
 
-import { useEffect } from 'react';
-
 export function OffcanvasButton({
   showCanvas = false,
   setShowCanvas = undefined,
   btnTitle = 'Offcanvas',
   btnClass = 'btn-primary',
 }) {
-  useEffect(() => {
-    if (showCanvas) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
-
-    return () => {
-      document.body.style.overflow = '';
-    };
-  }, [showCanvas]);
-
   return (
     <button
       className={`btn ${btnClass}`}
@@ -41,11 +27,8 @@ export function OffcanvasWrapper({
   if (!showCanvas) return null;
 
   return (
-    <div
-      style={{ zIndex }}
-      className='fixed inset-0 bg-white flex flex-col overflow-y-auto pb-12'
-    >
-      <div className='container flex items-center justify-between border-b-2 border-muted py-3'>
+    <div style={{ zIndex }} className={`bg-white pb-16`}>
+      <div className='container flex items-center justify-between border-b-2 border-muted py-3 shrink-0'>
         <h1>{title}</h1>
         <button
           type='button'
@@ -56,7 +39,9 @@ export function OffcanvasWrapper({
         </button>
       </div>
 
-      <div className='container py-4'>{children}</div>
+      <div className=''>
+        <div className='container py-4'>{children}</div>
+      </div>
     </div>
   );
 }

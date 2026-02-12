@@ -5,11 +5,7 @@ import Loading from '@components/Loading/client';
 import OptionQuantityButton from './OptionQuantityButton';
 import OptionPrice from './OptionPrice';
 
-export default function ItemOption({
-  options = [],
-  item = null,
-  storeCurrency = '',
-}) {
+export default function ItemOption({ options = [], item = null }) {
   const { state } = useOrder();
 
   if (state === null) return <Loading />;
@@ -44,7 +40,7 @@ export default function ItemOption({
               )}
               <div>{option.title}</div>
 
-              <OptionPrice option={option} storeCurrency={storeCurrency} />
+              <OptionPrice option={option} />
             </h4>
 
             <OptionQuantityButton item={item} option={option} />

@@ -51,7 +51,7 @@ export default function StoreComponent({ store }) {
         defaultImage={store?.logoUrl || defaultLogoUrl}
       />
 
-      <div className='text-center text-justify mt-5'>{store.description}</div>
+      <div className='text-justify mt-5'>{store.description}</div>
     </OrderProvider>
   );
 }

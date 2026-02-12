@@ -6,7 +6,7 @@ import { useParams } from 'next/navigation';
 
 export default function OptionPrice({ option, storeCurrency }) {
   const lng = useParams()?.lng || fallbackLng;
-  const additionalClass = 'm-auto fs-7 fw-bolder';
+  const additionalClass = 'm-auto font-semibold';
   const currencySpan = <CurrencySpan storeCurrency={storeCurrency} />;
   const freeSpan = <FreeSpanComponent additionalClass={additionalClass} />;
 
@@ -16,7 +16,7 @@ export default function OptionPrice({ option, storeCurrency }) {
         (<span>{freeSpan}</span>)
       </span>
     ) : (
-      <div className={`flex items-center ${additionalClass} `}>
+      <div className={`font-semibold flex items-center ${additionalClass} `}>
         <span>(</span>
         <span className='flex items-center gap-1'>
           <span>{formatNumber(option.price, lng)}</span>

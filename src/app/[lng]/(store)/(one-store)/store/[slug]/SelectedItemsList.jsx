@@ -23,10 +23,13 @@ export default function SelectedItemsList({ storeCurrency }) {
   const currencySpan = <CurrencySpan storeCurrency={storeCurrency} />;
 
   return (
-    <div className='container-lg mx-auto grid grid-cols-1 gap-2'>
+    <div className='container mx-auto grid grid-cols-1 gap-2'>
       {state.items.map((item, index) => {
         return (
-          <div key={index} className='py-3 border-bottom border-3 text-active'>
+          <div
+            key={index}
+            className='py-3 border-b-2  border-purple-500 text-active'
+          >
             <div className='flex items-center justify-between my-auto'>
               <h4>{item.title}</h4>
               <ItemQuantityButton item={item} />
@@ -34,15 +37,18 @@ export default function SelectedItemsList({ storeCurrency }) {
 
             <ItemPrice item={item} storeCurrency={storeCurrency} />
 
-            <div className='container mx-auto grid grid-cols-1 gap-2 mt-2'>
+            <div className='container mx-auto grid grid-cols-1 gap-2 pt-4'>
               {item.options.map((option) => {
                 if (option.count <= 0 || !option?.isActive) return undefined;
                 return (
-                  <div key={option.id} className='my-auto border-top py-2'>
+                  <div
+                    key={option.id}
+                    className='my-auto border-t-2 border-purple-300 py-2'
+                  >
                     <div className='flex items-center justify-between'>
                       <div className='flex align-items-baseline gap-1 m-0'>
                         {option.isRequired && (
-                          <i className='flex items-center fs-11 bi bi-asterisk text-danger'></i>
+                          <i className='flex items-center h4 p-1 bi bi-asterisk text-danger'></i>
                         )}
                         <div>{option.title}</div>
                         <OptionPrice
@@ -61,27 +67,27 @@ export default function SelectedItemsList({ storeCurrency }) {
       })}
 
       <div className='mt-3 num-align'>
-        <div className='flex items-center justify-between h5'>
-          <div>{t('order-list-tax-title')}</div>
+        <h3 className='flex items-center justify-between font-semibold'>
+          <div className=''>{t('order-list-tax-title')}</div>
           <div className='flex gap-1'>
             <span>{formatNumber(state.taxPrice, lng)}</span>
             <span>{currencySpan}</span>
           </div>
-        </div>
-        <div className='flex items-center justify-between mt-2 h5'>
-          <div>{t('order-list-title')}</div>
+        </h3>
+        <h3 className='flex items-center justify-between mt-2 font-semibold'>
+          <div className=''>{t('order-list-title')}</div>
           <div className='flex gap-1'>
             <span>{formatNumber(state.itemsPrice, lng)}</span>
             <span>{currencySpan}</span>
           </div>
-        </div>
-        <div className='flex items-center justify-between mt-8 h4'>
-          <div>{t('order-list-total-price-title')}</div>
-          <div className='flex gap-1'>
+        </h3>
+        <h3 className='flex items-center justify-between mt-8 font-bold'>
+          <div className=''>{t('order-list-total-price-title')}</div>
+          <div className='flex gap-1 h2'>
             <span>{formatNumber(state.totalPrice, lng)}</span>
             <span>{currencySpan}</span>
           </div>
-        </div>
+        </h3>
       </div>
     </div>
   );

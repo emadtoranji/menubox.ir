@@ -4,7 +4,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 export default async function StoreCard({ lng, store }) {
-  const { t } = await getT(lng, 'store');
   const { t: tStoreCategories } = await getT(lng, 'store-categories');
 
   if (!store) return null;
@@ -16,10 +15,10 @@ export default async function StoreCard({ lng, store }) {
   return (
     <article className='w-full'>
       <Link href={navigateToStore}>
-        <div className='card h-full w-full border-0 shadow rounded'>
-          <h4 className='font-bold text-center card-header bg-white py-3 px-2'>
+        <div className='card h-full w-full'>
+          <h3 className='font-bold text-center card-header bg-white py-3 px-2'>
             {store.name}
-          </h4>
+          </h3>
           <div className='card-body'>
             <Image
               className='flex mx-auto mb-3'
@@ -30,9 +29,7 @@ export default async function StoreCard({ lng, store }) {
               alt={`${store.name} Logo`}
               loading='lazy'
             />
-            <p
-              className={`h6 fw-normal mb-8 flex-grow-1 text-justify font-bold`}
-            >
+            <p className={`h4 fw-normal mb-8 text-justify font-bold`}>
               {domPurifyServer(store?.description || '')}
             </p>
 
@@ -42,7 +39,7 @@ export default async function StoreCard({ lng, store }) {
                   return (
                     <span
                       key={`${store.id}-${category.key}`}
-                      className='badge btn-active'
+                      className='badge rounded btn btn-active'
                     >
                       <small className='text-capitalize'>
                         {tStoreCategories(category.key, category.key)}
@@ -51,11 +48,11 @@ export default async function StoreCard({ lng, store }) {
                   );
                 })}
               </div>
-              <div className='flex gap-1 badge btn-active'>
+              <div className='flex gap-1 rounded btn btn-active'>
                 <span className='font-bold'>
                   {domPurifyServer(store?.location?.provinceLocal || '')}
                 </span>
-                <span className='fst-italic'>
+                <span className='italic'>
                   {domPurifyServer(store?.address || '')}
                 </span>
               </div>

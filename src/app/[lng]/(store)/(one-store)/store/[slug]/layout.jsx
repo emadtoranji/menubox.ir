@@ -8,7 +8,7 @@ export async function generateMetadata(props) {
 export default async function Layout({ children }) {
   return (
     <>
-      <Main customClass={'store-section mb-5'}>{children}</Main>
+      <Main customClass={'mb-5'}>{children}</Main>
     </>
   );
 }

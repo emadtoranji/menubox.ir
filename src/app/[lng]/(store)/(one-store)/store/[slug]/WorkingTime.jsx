@@ -36,9 +36,9 @@ export default function WorkingTime() {
   }, [state?.store?.workingHours, dayOfWeekNow, t, lng]);
 
   return message ? (
-    <div className='asiatech-font share-tech-font fst-italic text-black flex justify-center'>
+    <div className='asiatech-font share-tech-font italic text-black flex justify-center'>
       <span
-        className='border-bottom border-dark'
+        className='border-b border-black'
         dangerouslySetInnerHTML={{ __html: domPurify(message) }}
       />
     </div>

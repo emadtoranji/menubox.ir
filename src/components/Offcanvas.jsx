@@ -1,15 +1,30 @@
+'use client';
+
+import { useEffect } from 'react';
+
 export function OffcanvasButton({
-  id = null,
+  showCanvas = false,
+  setShowCanvas = undefined,
   btnTitle = 'Offcanvas',
   btnClass = 'btn-primary',
 }) {
+  useEffect(() => {
+    if (showCanvas) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [showCanvas]);
+
   return (
     <button
       className={`btn ${btnClass}`}
       type='button'
-      data-bs-toggle='offcanvas'
-      data-bs-target={`#${id}`}
-      aria-controls={id}
+      onClick={() => setShowCanvas(!showCanvas)}
     >
       {btnTitle}
     </button>
@@ -18,32 +33,30 @@ export function OffcanvasButton({
 
 export function OffcanvasWrapper({
   title,
-  id = null,
   children,
-  zIndex = 1000,
+  showCanvas = false,
+  setShowCanvas = undefined,
+  zIndex = 5000,
 }) {
+  if (!showCanvas) return null;
+
   return (
     <div
       style={{ zIndex }}
-      className='offcanvas offcanvas-bottom h-full'
-      tabIndex='-1'
-      id={id}
-      aria-labelledby={`${id}Label`}
+      className='fixed inset-0 bg-white flex flex-col overflow-y-auto pb-12'
     >
-      <div className='offcanvas-header flex items-center justify-between'>
-        <h5 className='offcanvas-title' id={`${id}Label`}>
-          {title}
-        </h5>
-        <div>
-          <button
-            type='button'
-            className='btn-close'
-            data-bs-dismiss='offcanvas'
-            aria-label='Close'
-          ></button>
-        </div>
+      <div className='container flex items-center justify-between border-b-2 border-muted py-3'>
+        <h1>{title}</h1>
+        <button
+          type='button'
+          className='btn'
+          onClick={() => setShowCanvas(false)}
+        >
+          <i className='bi bi-x-lg text-black text-2xl'></i>
+        </button>
       </div>
-      <div className='offcanvas-body'>{children}</div>
+
+      <div className='container py-4'>{children}</div>
     </div>
   );
 }

@@ -45,7 +45,7 @@ export default async function Page({ params, searchParams }) {
   const title = slugFiltered && stores.length > 0 ? stores[0].title : undefined;
 
   return (
-    <>
+    <div className='mb-12'>
       <SearchForm search={search} slugFiltered={slugFiltered} title={title} />
 
       <div className='container my-5'>
@@ -71,6 +71,6 @@ export default async function Page({ params, searchParams }) {
         slug={slug}
         search={search}
       />
-    </>
+    </div>
   );
 }

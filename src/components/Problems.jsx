@@ -14,17 +14,17 @@ export default function Problem({
         <div className=''>
           <div className='mb-3'>
             <div>
-              <h1 className='text-3xl font-bold text-gray-600'>{code}</h1>
+              <h1 className='font-bold text-active'>{code}</h1>
             </div>
           </div>
           <div className='mb-8'>
-            <div>
-              <p className=''>{content.title}</p>
-            </div>
+            <h3 className=''>
+              <p>{content.title}</p>
+            </h3>
           </div>
           <div className='mb-5'>
             <Link
-              className='btn rounded btn-priamry font-bold'
+              className='btn rounded btn btn-lg btn-primary font-bold'
               href={`/${currentLang}`}
             >
               {content.button}

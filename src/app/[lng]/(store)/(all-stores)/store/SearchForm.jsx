@@ -49,7 +49,7 @@ export default function SearchForm({
           handleSearch();
         }}
       >
-        <div className='flex border-2 border-white p-0 m-0 rounded-full w-full px-2'>
+        <div className='flex gap-3 bg-white p-0 m-0 rounded-full w-full px-4'>
           <input
             type='text'
             className='fs-5 border-none bg-transparent form-control'
@@ -66,7 +66,7 @@ export default function SearchForm({
             disabled={searchQuery.length === 0}
           >
             <span className='visually-hidden'>Reset Search Input</span>
-            <i className='bi bi-arrow-repeat text-active h3'></i>
+            <i className='bi bi-arrow-repeat text-active h2'></i>
           </button>
           <button
             type='submit'
@@ -76,7 +76,7 @@ export default function SearchForm({
             disabled={searchQuery.length === 0}
           >
             <span className='visually-hidden'>Submit Search</span>
-            <i className='bi bi-search text-active h3'></i>
+            <i className='bi bi-search text-active h2'></i>
           </button>
         </div>
       </form>

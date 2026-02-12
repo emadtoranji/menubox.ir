@@ -21,7 +21,7 @@ export default async function LayoutDashboard({ children, params }) {
   return (
     <>
       <Header t={t} currentLang={currentLang} section='dashboard' />
-      <Main customClass=''>{children}</Main>
+      <Main>{children}</Main>
     </>
   );
 }

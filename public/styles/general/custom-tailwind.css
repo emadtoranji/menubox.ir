@@ -1,0 +1,160 @@
+.container-fluid {
+  @apply m-0 p-0;
+}
+
+.container {
+  @apply mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-16 2xl:px-28;
+}
+
+.btn {
+  @apply px-2 py-1 rounded-lg transition;
+}
+.btn-sm {
+  @apply px-2 py-1 text-sm;
+}
+
+.btn-2sm {
+  @apply px-1 py-1 text-sm;
+}
+.btn-lg {
+  @apply px-3 py-2 text-lg;
+}
+
+.btn-2lg {
+  @apply px-4 py-2 text-lg;
+}
+
+.btn-2lg {
+  @apply px-4 py-3 text-lg;
+}
+
+.btn-3lg {
+  @apply px-5 py-3 text-lg;
+}
+
+.btn,
+button,
+[type='button'],
+[type='submit'] {
+  @apply opacity-95 transition;
+}
+
+.btn,
+button,
+[type='button'],
+[type='submit'] {
+  @apply hover:cursor-pointer hover:opacity-100;
+}
+
+button:disabled {
+  @apply opacity-60 hover:cursor-not-allowed hover:opacity-60;
+}
+
+.btn-primary {
+  @apply bg-blue-500 text-white;
+}
+
+.text-primary {
+  @apply text-blue-500;
+}
+
+.btn-warning {
+  @apply bg-yellow-500 text-black;
+}
+
+.text-warning {
+  @apply text-yellow-500;
+}
+
+.btn-danger {
+  @apply bg-red-500 text-white;
+}
+
+.text-danger {
+  @apply text-red-500;
+}
+
+.btn-success {
+  @apply bg-green-500 text-white;
+}
+
+.text-success {
+  @apply text-green-500;
+}
+
+.btn-dark {
+  @apply bg-gray-950 text-white;
+}
+
+.card {
+  @apply bg-white shadow-lg rounded-lg overflow-hidden px-4 py-5;
+}
+.card-header,
+.card-title {
+  @apply text-base font-semibold mb-2;
+}
+.card-header-sm,
+.card-title-sm {
+  @apply text-sm font-semibold mb-2;
+}
+.card-body {
+  @apply py-2 px-1 lg:py-3 lg:px-2 2xl:py-4 2xl:px-3;
+}
+
+.text-muted {
+  @apply text-gray-500;
+}
+
+.form-control {
+  @apply w-full border rounded-lg px-3 py-2 placeholder-transparent focus:outline-none focus:ring-2;
+}
+
+.form-select {
+  @apply block w-full px-3 py-2 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-gray-300 rounded-md transition ease-in-out focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:ring-1 focus:ring-blue-600 focus:outline-none appearance-none;
+}
+
+.is-invalid {
+  @apply border border-red-500 focus:ring-red-800;
+}
+
+.is-valid {
+  @apply border border-green-500 focus:ring-green-800;
+}
+
+.is-unknown {
+  @apply border border-stone-500 focus:ring-stone-800;
+}
+
+h1,
+.h1 {
+  @apply text-5xl;
+}
+
+h2,
+.h2 {
+  @apply text-4xl;
+}
+
+h3,
+.h3 {
+  @apply text-3xl;
+}
+
+h4,
+.h4 {
+  @apply text-2xl;
+}
+
+h5,
+.h5 {
+  @apply text-xl;
+}
+
+h6,
+.h6 {
+  @apply text-lg;
+}
+
+p {
+  @apply leading-relaxed;
+}

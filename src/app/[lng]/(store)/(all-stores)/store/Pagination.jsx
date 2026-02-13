@@ -107,7 +107,7 @@ export async function Pagination({
   return (
     <div className='mx-0 mt-12'>
       <nav>
-        <ul className='flex justify-between items-center gap-4 bg-white h5 shadow-lg text-active py-2 mx-0 px-8 sm:rounded-lg sm:mx-8 md:mx-12 lg:mx-16 xl:mx-24 2xl:mx-32 3xl:mx-40'>
+        <ul className='flex justify-between items-center gap-4 bg-white text-xl shadow-lg text-active py-2 mx-0 px-8 sm:rounded-lg sm:mx-8 md:mx-12 lg:mx-16 xl:mx-24 2xl:mx-32 3xl:mx-40'>
           <ChangeByButton
             total_pages={total_pages}
             current_page={current_page}

@@ -92,7 +92,7 @@ export default async function FinancePage({ params }) {
 
                     <div className='flex items-center justify-between'>
                       <div className='fs-3 font-bold'>{balance}</div>
-                      <div className='text-gray-600 small currency-font fs-4'>
+                      <div className='text-gray-600 small currency-font text-xl'>
                         {t(
                           `currencies.${user?.currency || MAIN_CURRENCY}`,
                           user?.currency || MAIN_CURRENCY,

@@ -13,7 +13,7 @@ export default function CopyNewPassword({ newPassword }) {
         onClick={() => makeCopyToClipboard(newPassword)}
       >
         <span className=''>{newPassword}</span>
-        <i className='bi bi-copy fs-4'></i>
+        <i className='icon bi bi-copy text-xl'></i>
       </button>
     </div>
   );

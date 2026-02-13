@@ -104,8 +104,8 @@ export function showDollarCompactFormat(
             {(count / scale.divisor).toFixed(fixCount)}
           </span>
           <span className='opacity-100 flex items-center gap-1 '>
-            <span className='fs-4 persian-gulf-font'>{scale.symbol}</span>
-            <span className='fs-4 persian-gulf-font'>{currency}</span>
+            <span className='text-xl persian-gulf-font'>{scale.symbol}</span>
+            <span className='text-xl persian-gulf-font'>{currency}</span>
           </span>
         </div>
       ) : (

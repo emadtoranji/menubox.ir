@@ -38,7 +38,7 @@ function ShowStatus({ t, paymentData }) {
     <div className='container'>
       <div className='w-auto md:w-8/12 lg:w-6/12 2xl:w-5/12 m-auto mt-5'>
         <div className='w-full p-3 bg-white rounded-3xl shadow-lg'>
-          <h2 className='h4 mb-3 text-center'>{t('payment.status')}</h2>
+          <h3 className='mb-3 text-center'>{t('payment.status')}</h3>
           <div className='flex gap-1 mb-3'>
             <strong>{t('payment.status')}:</strong>
             <span className={`font-bold ${statusColor}`}>{statusText}</span>

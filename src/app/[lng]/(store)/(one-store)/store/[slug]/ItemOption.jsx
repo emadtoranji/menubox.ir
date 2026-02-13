@@ -36,7 +36,7 @@ export default function ItemOption({ options = [], item = null }) {
           >
             <h4 className='flex items-baseline gap-1 m-0'>
               {option.isRequired && (
-                <i className='flex items-center p-1 bi bi-asterisk text-danger'></i>
+                <i className='flex items-center p-1 icon bi bi-asterisk text-danger'></i>
               )}
               <div>{option.title}</div>
 

@@ -1,7 +1,6 @@
-@import 'tailwindcss';
 @import './fonts.css';
 @import './colors.css';
-@import './custom-tailwind.css';
+@import './tailwind.css';
 
 :root {
   --header-height: 66px;
@@ -40,13 +39,20 @@ body {
   line-height: 1.7;
 }
 
-.container-fluid {
-  margin: 0;
-  padding: 0;
+.modal-backdrop {
+  z-index: var(--zindex-modal-backdrop) !important;
+}
+.modal {
+  z-index: var(--zindex-modal) !important;
 }
 
-.container {
-  margin: auto;
+nav,
+.navbar {
+  z-index: var(--zindex-nav) !important;
+}
+
+footer {
+  z-index: var(--zindex-footer) !important;
 }
 
 header {

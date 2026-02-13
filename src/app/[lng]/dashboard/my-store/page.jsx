@@ -75,7 +75,7 @@ export default async function Index({ params }) {
                               className={`bi ${item?.isActive ? 'bi-bag-check text-success' : 'bi-bag-x text-danger'} text-3xl`}
                             ></i>
                           </div>
-                          <p className='h4 font-semibold my-2 px-2'>
+                          <p className='text-2xl font-semibold my-2 px-2'>
                             {item?.description || ''}
                           </p>
                           <div className='flex gap-2 w-full text-center'>

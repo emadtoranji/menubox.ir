@@ -35,7 +35,7 @@ export function OffcanvasWrapper({
           className='btn'
           onClick={() => setShowCanvas(false)}
         >
-          <i className='bi bi-x-lg text-black text-2xl'></i>
+          <i className='icon bi bi-x-lg text-black text-2xl'></i>
         </button>
       </div>
 

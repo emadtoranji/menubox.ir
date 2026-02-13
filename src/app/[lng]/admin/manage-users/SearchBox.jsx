@@ -34,7 +34,7 @@ export function SearchForm({ t, fetchUsers }) {
           disabled={!searchQuery.length}
         >
           <span className='visually-hidden'>Make Search Box Empty</span>
-          <i className='bi bi-arrow-repeat h4'></i>
+          <i className='icon bi bi-arrow-repeat'></i>
         </button>
         <button
           type='submit'
@@ -45,7 +45,7 @@ export function SearchForm({ t, fetchUsers }) {
           disabled={!searchQuery.length}
         >
           <span className='visually-hidden'>Submit Search</span>
-          <i className='bi bi-search h4'></i>
+          <i className='icon bi bi-search'></i>
         </button>
       </div>
     </div>

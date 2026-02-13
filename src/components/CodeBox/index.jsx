@@ -42,7 +42,7 @@ export default function CodeBox({
 
         <div className='absolute bottom-0 end-0 mb-3 mr-3'>
           <button
-            className='btn btn-primary btn-sm fs-8 font-bold copy'
+            className='btn btn-primary btn-sm h8 font-bold copy'
             onClick={() => makeCopyToClipboard(code)}
           >
             {t('general.copy')}

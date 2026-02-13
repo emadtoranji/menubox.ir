@@ -41,19 +41,3 @@ header nav {
   background-color: var(--color-bg-nav) !important;
   color: var(--color-text-nav) !important;
 }
-
-.modal-backdrop {
-  z-index: var(--zindex-modal-backdrop) !important;
-}
-.modal {
-  z-index: var(--zindex-modal) !important;
-}
-
-nav,
-.navbar {
-  z-index: var(--zindex-nav) !important;
-}
-
-footer {
-  z-index: var(--zindex-footer) !important;
-}

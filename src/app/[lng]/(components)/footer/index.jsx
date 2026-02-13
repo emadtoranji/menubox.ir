@@ -26,7 +26,7 @@ export default async function Footer({ lng }) {
 
         <div className='w-full lg:w-1/3'>
           <h3 className='font-bold mb-3'>{t('footer.quick_links.title')}</h3>
-          <ul className='grid grid-flow-col grid-rows-4 sm:grid-rows-2  gap-4 m-0 p-0 h4'>
+          <ul className='grid grid-flow-col grid-rows-4 sm:grid-rows-2  gap-4 m-0 p-0 text-2xl'>
             <li className='w-full'>
               <Link href={`/${lng}/faqs`}>{t('footer.quick_links.faqs')}</Link>
             </li>
@@ -66,28 +66,28 @@ export default async function Footer({ lng }) {
           target='_blank'
           aria-label='X'
         >
-          <i className='bi bi-twitter text-2xl'></i>
+          <i className='icon bi bi-twitter text-2xl'></i>
         </Link>
         <Link
           href={process.env.NEXT_PUBLIC_DEVELOPER_GITHUB || '/'}
           target='_blank'
           aria-label='GitHub'
         >
-          <i className='bi bi-github text-2xl'></i>
+          <i className='icon bi bi-github text-2xl'></i>
         </Link>
         <Link
           href={process.env.NEXT_PUBLIC_DEVELOPER_TELEGRAM || '/'}
           target='_blank'
           aria-label='Telegram'
         >
-          <i className='bi bi-telegram text-2xl'></i>
+          <i className='icon bi bi-telegram text-2xl'></i>
         </Link>
         <Link
           href={process.env.NEXT_PUBLIC_DEVELOPER_LINKEDIN || '/'}
           target='_blank'
           aria-label='LinkedIn'
         >
-          <i className='bi bi-linkedin text-2xl'></i>
+          <i className='icon bi bi-linkedin text-2xl'></i>
         </Link>
       </div>
     </footer>

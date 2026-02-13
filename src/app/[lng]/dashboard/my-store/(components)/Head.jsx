@@ -35,14 +35,17 @@ export default async function Head({
               href={`/${lng}/dashboard/my-store/edit/${id}/delete`}
               className='w-full'
             >
-              <i type='button' className='bi bi-trash3-fill text-danger h1'></i>
+              <i
+                type='button'
+                className='icon bi bi-trash3-fill text-danger'
+              ></i>
             </Link>
           )}
           {!hasNew ? undefined : (
             <Link href={`/${lng}/dashboard/my-store/new`} className='w-full'>
               <i
                 type='button'
-                className='bi bi-plus-circle-fill text-active h1'
+                className='icon bi bi-plus-circle-fill text-active'
               ></i>
             </Link>
           )}
@@ -53,13 +56,13 @@ export default async function Head({
             >
               <i
                 type='button'
-                className='bi bi-pencil-square text-danger-emphasis h1'
+                className='icon bi bi-pencil-square text-danger-emphasis'
               ></i>
             </Link>
           )}
           {!hasStore ? undefined : (
             <Link href={`/${lng}/dashboard/my-store`} className='w-full'>
-              <i type='button' className='bi bi-shop text-success h1'></i>
+              <i type='button' className='icon bi bi-shop text-success'></i>
             </Link>
           )}
         </div>

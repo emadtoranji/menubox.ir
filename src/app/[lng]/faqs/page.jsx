@@ -21,7 +21,7 @@ export default async function Page({ params }) {
               <h3 className='text-active font-bold mb-2' itemProp='name'>
                 {item.q}
               </h3>
-              <p className='px-1 lg:px-4 2xl:px-6 h5' itemProp='text'>
+              <p className='px-1 lg:px-4 2xl:px-6 text-xl' itemProp='text'>
                 {item.a}
               </p>
             </div>

@@ -124,7 +124,7 @@ export default function GatewayForm({ gateway, currentLang }) {
             />
             <label
               htmlFor='floatingInputAmountTopUp'
-              className='currency-font mx-1 end-0 font-bold fs-4'
+              className='currency-font mx-1 end-0 font-bold text-xl'
             >
               {t(
                 `currencies.${String(MAIN_CURRENCY).toLowerCase()}`,

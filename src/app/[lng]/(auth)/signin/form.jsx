@@ -272,7 +272,7 @@ function SignInForm({ t, currentLang, enabledLoginProviders }) {
                       <Spinner small={true} />
                     ) : (
                       <span className='capitalize flex items-center gap-1'>
-                        {p.id} <i className={`bi bi-${p.id}`}></i>
+                        {p.id} <i className={`icon bi bi-${p.id}`}></i>
                       </span>
                     )}
                   </button>

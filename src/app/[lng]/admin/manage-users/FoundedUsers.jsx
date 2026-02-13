@@ -205,7 +205,7 @@ export function FoundedUsers({ t, foundedUsers = [], setFoundedUsers }) {
                   className='flex gap-1 items-center btn btn-primary w-auto px-8'
                   onClick={() => handleEdit(user)}
                 >
-                  <i className='bi bi-pencil-square h5'></i>
+                  <i className='icon bi bi-pencil-square text-xl'></i>
                   {t('general.edit')}
                 </button>
               ) : (
@@ -215,7 +215,7 @@ export function FoundedUsers({ t, foundedUsers = [], setFoundedUsers }) {
                     onClick={handleSave}
                     disabled={saving}
                   >
-                    <i className='bi bi-check-circle h5'></i>
+                    <i className='icon bi bi-check-circle text-xl'></i>
                     {t('general.save')}
                   </button>
                   <button
@@ -223,7 +223,7 @@ export function FoundedUsers({ t, foundedUsers = [], setFoundedUsers }) {
                     onClick={handleCancel}
                     disabled={saving}
                   >
-                    <i className='bi bi-x-circle h5'></i>
+                    <i className='icon bi bi-x-circle text-xl'></i>
                     {t('general.cancel')}
                   </button>
                 </>

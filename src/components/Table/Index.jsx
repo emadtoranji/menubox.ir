@@ -13,7 +13,7 @@ export default function Index({
 
   if (!Array.isArray(data) || data.length === 0) {
     return (
-      <div className='text-gray-600 text-center py-16 fs-5'>
+      <div className='text-gray-600 text-center py-16 text-lg'>
         {t('table.noData')}
       </div>
     );

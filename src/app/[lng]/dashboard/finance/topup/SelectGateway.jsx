@@ -39,7 +39,7 @@ export default function SelectGateway({
 
   return (
     <>
-      <div className='w-full grid grid-cols-3 grid-cols-sm-1 grid-cols-sm-3 btn-group gap-1 mx-1 text-center fw-normal fs-6 mt-2'>
+      <div className='w-full grid grid-cols-3 grid-cols-sm-1 grid-cols-sm-3 btn-group gap-1 mx-1 text-center fw-normal text-md mt-2'>
         {allGatewaysFiltered.map((g) => {
           return (
             <div

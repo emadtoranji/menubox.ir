@@ -48,7 +48,7 @@ export default function SelectedItemsList() {
                     <div className='flex items-center justify-between'>
                       <div className='flex align-items-baseline gap-1 m-0'>
                         {option.isRequired && (
-                          <i className='flex items-center h4 p-1 bi bi-asterisk text-danger'></i>
+                          <i className='icon bi bi-asterisk text-danger'></i>
                         )}
                         <div>{option.title}</div>
                         <OptionPrice
@@ -83,7 +83,7 @@ export default function SelectedItemsList() {
         </h3>
         <h3 className='flex items-center justify-between mt-8 font-bold'>
           <div className=''>{t('order-list-total-price-title')}</div>
-          <div className='flex gap-1 h2'>
+          <div className='flex gap-1 text-2xl'>
             <span>{formatNumber(state.totalPrice, lng)}</span>
             <span>{currencySpan}</span>
           </div>

@@ -10,19 +10,19 @@ function SectionCard({ section, customBtnColor = 'btn-active', id, t, lng }) {
           <h2>{t(`edit.sections.${section}.title`)}</h2>
           <div>
             {section === 'general' && (
-              <i className='bi bi-columns-gap text-stone-500 h2'></i>
+              <i className='icon bi bi-columns-gap text-stone-500'></i>
             )}
             {section === 'items' && (
-              <i className='bi bi-cup-hot text-orange-950 h2'></i>
+              <i className='icon bi bi-cup-hot text-orange-950'></i>
             )}
             {section === 'tables' && (
-              <i className='bi bi-dice-6 text-black h2'></i>
+              <i className='icon bi bi-dice-6 text-black'></i>
             )}
             {section === 'working-hour' && (
-              <i className='bi bi-clock-history text-green-500 h2'></i>
+              <i className='icon bi bi-clock-history text-green-500'></i>
             )}
             {section === 'delete' && (
-              <i className='bi bi-trash3 text-red-700 h2'></i>
+              <i className='icon bi bi-trash3 text-red-700'></i>
             )}
           </div>
         </div>

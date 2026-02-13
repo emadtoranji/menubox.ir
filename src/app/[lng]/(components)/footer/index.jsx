@@ -17,9 +17,9 @@ export default async function Footer({ lng }) {
           </h5>
         </div>
 
-        <div className='w-full lg:w-2/3 pt-3 mt-3 border-t-2 border-white/25 lg:border-0 lg:mt-auto lg:pt-0'>
+        <div className='w-full lg:w-1/3 pt-3 mt-3 border-t-2 border-white/25 lg:border-0 lg:mt-auto lg:pt-0'>
           <h5 className='font-bold mb-3'>{t('footer.quick_links.title')}</h5>
-          <ul className='grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-4 gap-4 m-0 p-0 text-nowrap'>
+          <ul className='grid grid-cols-1 md:grid-cols-2 gap-4 text-nowrap'>
             <li>
               <Link href={`/${lng}/faqs`}>{t('footer.quick_links.faqs')}</Link>
             </li>

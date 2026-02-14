@@ -58,7 +58,7 @@ export default function OptionQuantityButton({ item = null, option }) {
       disabled
     >
       <span className='sr-only'>Is Requried</span>
-      <i className='p-1 icon bi bi-check2-circle'></i>
+      <i className='p-1 icon-sm bi bi-check2-circle'></i>
       <span className='hidden'>{t('is-required')}</span>
     </button>
   ) : isSimpleAdd && count === 0 ? (
@@ -75,7 +75,7 @@ export default function OptionQuantityButton({ item = null, option }) {
       }
     >
       <span className='sr-only'>Add Option</span>
-      <i className='p-1 icon bi bi-plus-lg'></i>
+      <i className='p-1 icon-sm bi bi-plus-lg'></i>
       <span className='hidden'>{t('add-option')}</span>
     </button>
   ) : isSimpleAdd && count === 1 ? (
@@ -92,7 +92,7 @@ export default function OptionQuantityButton({ item = null, option }) {
       }
     >
       <span className='sr-only'>Remove Option</span>
-      <i className='p-1 icon bi bi-trash3'></i>
+      <i className='p-1 icon-sm bi bi-trash3'></i>
       <span className='hidden'>{t('remove-option')}</span>
     </button>
   ) : (

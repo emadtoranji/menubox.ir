@@ -65,7 +65,7 @@ export default function ItemQuantityButton({ item = {} }) {
         <span className='sr-only'>Add Item</span>
         {isOrderable ? (
           <>
-            <i className='p-1 icon bi bi-plus-lg'></i>
+            <i className='p-1 icon-sm bi bi-plus-lg'></i>
             <span className='hidden'>{t('add-item')}</span>
           </>
         ) : (
@@ -82,7 +82,7 @@ export default function ItemQuantityButton({ item = {} }) {
         disabled={!isOrderable}
       >
         <span className='sr-only'>Add Item</span>
-        <i className='p-1 icon bi bi-plus-lg'></i>
+        <i className='p-1 icon-sm bi bi-plus-lg'></i>
       </button>
       <span className='px-2 font-bold'>{quantity}</span>
       <button
@@ -92,7 +92,7 @@ export default function ItemQuantityButton({ item = {} }) {
       >
         <span className='sr-only'>Remove Item</span>
         <i
-          className={`p-1 icon bi ${quantity === 1 ? 'bi-trash3' : 'bi-dash-lg'}`}
+          className={`p-1 icon-sm bi ${quantity === 1 ? 'bi-trash3' : 'bi-dash-lg'}`}
         ></i>
       </button>
     </div>

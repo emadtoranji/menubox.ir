@@ -100,7 +100,7 @@
   button,
   [type='button'],
   [type='submit'] {
-    @apply opacity-95 transition;
+    @apply transition;
   }
 
   .btn,

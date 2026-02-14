@@ -27,18 +27,19 @@ export default async function Intro({ lng }) {
           </div>
 
           <div className='w-full grid grid-cols-1 sm:grid-cols-2 items-center mt-4 gap-2'>
-            <button className='btn btn-lg btn-active'>
-              <Link href={`/${lng}/dashboard`}>
-                <span className='sr-only'>Intro (Dashboard)</span>
+            <Link href={`/${lng}/dashboard`}>
+              <button className='w-full btn btn-lg btn-active'>
+                <span className='sr-only'>Intro (Dashboard)</span>{' '}
                 {t('intro.intro-button')}
-              </Link>
-            </button>
-            <button className='btn btn-lg btn-inactive'>
-              <Link href={`/${lng}/store`}>
+              </button>
+            </Link>
+
+            <Link href={`/${lng}/store`}>
+              <button className='w-full btn btn-lg btn-inactive'>
                 <span className='sr-only'>Store</span>
                 {t('intro.stores-button')}
-              </Link>
-            </button>
+              </button>
+            </Link>
           </div>
         </div>
       </div>

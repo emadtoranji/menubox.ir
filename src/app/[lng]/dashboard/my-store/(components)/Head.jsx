@@ -37,7 +37,7 @@ export default async function Head({
             >
               <i
                 type='button'
-                className='icon bi bi-trash3-fill text-danger'
+                className='icon-lg bi bi-trash3-fill text-danger'
               ></i>
             </Link>
           )}
@@ -45,7 +45,7 @@ export default async function Head({
             <Link href={`/${lng}/dashboard/my-store/new`} className='w-full'>
               <i
                 type='button'
-                className='icon bi bi-plus-circle-fill text-active'
+                className='icon-lg bi bi-plus-circle-fill text-active'
               ></i>
             </Link>
           )}
@@ -56,13 +56,13 @@ export default async function Head({
             >
               <i
                 type='button'
-                className='icon bi bi-pencil-square text-danger-emphasis'
+                className='icon-lg bi bi-pencil-square text-danger-emphasis'
               ></i>
             </Link>
           )}
           {!hasStore ? undefined : (
             <Link href={`/${lng}/dashboard/my-store`} className='w-full'>
-              <i type='button' className='icon bi bi-shop text-success'></i>
+              <i type='button' className='icon-lg bi bi-shop text-success'></i>
             </Link>
           )}
         </div>

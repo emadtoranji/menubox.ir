@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import ItemCategories from './ItemCategories';
 import ItemContent from './ItemContent';
 import StoreIntro from './StoreIntro';
@@ -16,6 +16,27 @@ export default function StoreComponent({ store }) {
   const { t } = useT('store');
   const defaultLogoUrl = '/images/app-logo.webp';
   if (!store) return <Loading />;
+
+  const filteredItems = useMemo(() => {
+    return Object.values(
+      store.items
+        .filter((f) => activeCategory === null || f.category === activeCategory)
+        .reduce((acc, item) => {
+          const cat = item.category;
+          if (!acc[cat]) acc[cat] = [];
+          acc[cat].push(item);
+          return acc;
+        }, {}),
+    ).flatMap((categoryItems) =>
+      categoryItems.sort((a, b) => {
+        const aInactive = !a.isActive || !a.isAvailable;
+        const bInactive = !b.isActive || !b.isAvailable;
+        if (aInactive && !bInactive) return 1;
+        if (!aInactive && bInactive) return -1;
+        return 0;
+      }),
+    );
+  }, [store.items, activeCategory]);
 
   return (
     <OrderProvider store={store}>
@@ -51,27 +72,7 @@ export default function StoreComponent({ store }) {
           logoUrl={store?.logoUrl || defaultLogoUrl}
         />
         <ItemContent
-          key={activeCategory}
-          items={Object.values(
-            store.items
-              .filter(
-                (f) => activeCategory === null || f.category === activeCategory,
-              )
-              .reduce((acc, item) => {
-                const cat = item.category;
-                if (!acc[cat]) acc[cat] = [];
-                acc[cat].push(item);
-                return acc;
-              }, {}),
-          ).flatMap((categoryItems) =>
-            categoryItems.sort((a, b) => {
-              const aInactive = !a.isActive || !a.isAvailable;
-              const bInactive = !b.isActive || !b.isAvailable;
-              if (aInactive && !bInactive) return 1;
-              if (!aInactive && bInactive) return -1;
-              return 0;
-            }),
-          )}
+          items={filteredItems}
           defaultImage={store?.logoUrl || defaultLogoUrl}
         />
         <p className='text-center italic mt-8 mb-10'>{store.description}</p>

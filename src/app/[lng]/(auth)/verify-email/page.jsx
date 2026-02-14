@@ -34,14 +34,16 @@ export default async function Index({ params, searchParams }) {
 
   return (
     <>
-      <div className='container flex justify-center h-full my-auto'>
-        <div className='card border-0 mt-10 p-10 text-2xl fw-bolder'>
-          <p className={`mb-12 text-${status ? 'success' : 'danger'}`}>
+      <div className='container mt-16'>
+        <div className='card'>
+          <h2
+            className={`mb-12 fw-bolder text-${status ? 'success' : 'danger'}`}
+          >
             {status ? t('email-verified') : t('link-expired')}
-          </p>
+          </h2>
 
-          <Link className='mx-auto' href={`/${currentLang}/dashboard/account`}>
-            <button className='btn btn-primary w-full'>
+          <Link href={`/${currentLang}/dashboard/setting`}>
+            <button className='btn btn-lg btn-primary w-full'>
               {t('button-title')}
             </button>
           </Link>

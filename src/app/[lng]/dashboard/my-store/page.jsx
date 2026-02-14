@@ -50,19 +50,16 @@ export default async function Index({ params }) {
             {myStoresData === undefined ? (
               <h2>{t('general.unknown-problem')}</h2>
             ) : myStoresData.length ? (
-              <div className='flex gap-3 mb-8'>
+              <div className='grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-1 md:gap-2 2xl:gap-3 mb-8'>
                 {myStoresData.map((item) => {
                   return (
-                    <div
-                      key={item.id}
-                      className='w-full md:w-6/12 xl:w-4/12 3xl:w-3/12'
-                    >
+                    <div key={item.id} className='w-full h-full'>
                       <div className='card p-1 h-full'>
-                        <div className='container'>
+                        <div className=''>
                           <Image
                             src={item?.logoUrl || `/images/app-logo.webp`}
-                            height={250}
-                            width={250}
+                            height={200}
+                            width={200}
                             style={{ objectFit: 'contain' }}
                             className='mx-auto'
                             alt={`Logo ${item?.slug}`}
@@ -70,24 +67,24 @@ export default async function Index({ params }) {
                         </div>
                         <div className='card-body'>
                           <div className='flex items-center justify-between'>
-                            <h2 className='font-bold'>{item?.name || '-'}</h2>
+                            <h3 className='font-bold'>{item?.name || '-'}</h3>
                             <i
-                              className={`bi ${item?.isActive ? 'bi-bag-check text-success' : 'bi-bag-x text-danger'} text-3xl`}
+                              className={`bi ${item?.isActive ? 'bi-bag-check-fill text-success' : 'bi-bag-x text-danger'} icon-lg`}
                             ></i>
                           </div>
-                          <p className='text-2xl font-semibold my-2 px-2'>
+                          <p className='text-lg font-medium my-2 px-1'>
                             {item?.description || ''}
                           </p>
-                          <div className='flex gap-2 w-full text-center'>
+                          <div className='flex gap-2 w-full text-center mt-8'>
                             <Link
                               href={`/${lng}/store/${item?.slug}`}
-                              className='btn btn-success w-1/2'
+                              className='btn btn-lg btn-success w-1/2'
                             >
                               {t('user-experience-button')}
                             </Link>
                             <Link
                               href={`/${lng}/dashboard/my-store/edit/${item?.id}`}
-                              className='btn btn-primary w-1/2'
+                              className='btn btn-lg btn-primary w-1/2'
                             >
                               {t('edit-button')}
                             </Link>

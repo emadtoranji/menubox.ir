@@ -52,7 +52,7 @@ export default async function Page({ params, searchParams }) {
         {stores.length === 0 && !slugFiltered && <StoreNotFound t={t} />}
 
         {stores.length > 0 && (
-          <div className='mx-auto grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-3 3xl:grid-cols-4 gap-3'>
+          <div className='mx-auto grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 4xl:grid-cols-4 3xl:grid-cols-4 gap-3'>
             {stores.map((store, index) => (
               <StoreCard
                 key={`storeBox-${store?.slug || index}`}

@@ -47,6 +47,10 @@
     @apply flex items-center justify-center text-xl;
   }
 
+  .icon-sm {
+    @apply flex items-center justify-center text-lg;
+  }
+
   .big-number {
     @apply text-2xl;
     @apply font-semibold;

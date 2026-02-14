@@ -10,19 +10,19 @@ function SectionCard({ section, customBtnColor = 'btn-active', id, t, lng }) {
           <h2>{t(`edit.sections.${section}.title`)}</h2>
           <div>
             {section === 'general' && (
-              <i className='icon bi bi-columns-gap text-stone-500'></i>
+              <i className='icon bi bi-building-fill-gear text-stone-600'></i>
             )}
             {section === 'items' && (
-              <i className='icon bi bi-cup-hot text-orange-950'></i>
+              <i className='icon bi bi-cup-hot-fill text-orange-900'></i>
             )}
             {section === 'tables' && (
-              <i className='icon bi bi-dice-6 text-black'></i>
+              <i className='icon bi bi-dice-6-fill text-blue-500'></i>
             )}
             {section === 'working-hour' && (
-              <i className='icon bi bi-clock-history text-green-500'></i>
+              <i className='icon bi bi-clock-fill text-green-500'></i>
             )}
             {section === 'delete' && (
-              <i className='icon bi bi-trash3 text-red-700'></i>
+              <i className='icon bi bi-trash3-fill text-red-700'></i>
             )}
           </div>
         </div>
@@ -34,7 +34,7 @@ function SectionCard({ section, customBtnColor = 'btn-active', id, t, lng }) {
 
       <Link
         href={`/${lng}/dashboard/my-store/edit/${id}/${section}`}
-        className={`btn ${customBtnColor} mt-3 text-center`}
+        className={`btn btn-lg ${customBtnColor} mt-3 text-center`}
       >
         {t('edit.open-section')}
       </Link>

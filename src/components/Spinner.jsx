@@ -24,7 +24,7 @@ export default function Spinner({
     return (
       <div className={`${displayClass}`} role='status'>
         <div
-          className={`${sizeClass} rounded-full bg-current opacity-75 animate-pulse`}
+          className={`${sizeClass} rounded-full bg-current opacity-75 animate-pulse ${color}`}
         />
         <span className='sr-only'>Loading...</span>
       </div>

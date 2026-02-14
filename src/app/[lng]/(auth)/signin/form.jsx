@@ -122,12 +122,12 @@ function SignInForm({ t, currentLang, enabledLoginProviders }) {
   };
 
   return (
-    <section className='w-full main-h-full flex items-center justify-center'>
-      <div className='p-6 shadow-lg bg-white rounded-2xl w-95/100 sm:w-80/100 md:w-75/100 lg:w-60/100 xl:w-50/100 2xl:w-40/100'>
+    <section className='flex items-center justify-center mt-5'>
+      <div className='p-6 shadow-lg bg-white rounded-2xl w-95/100 sm:w-80/100 md:w-65/100 lg:w-60/100 xl:w-55/100 2xl:w-40/100'>
         <div className='flex justify-between items-center mb-3 gap-2'>
           <h1 className='font-semibold'>{t('dashboard.login.title')}</h1>
           <button
-            className='px-3 py-1 text-sm btn-active rounded'
+            className='px-3 py-1 btn btn-sm btn-active'
             onClick={() => setSignupRequired(!signupRequired)}
           >
             {signupRequired
@@ -215,12 +215,12 @@ function SignInForm({ t, currentLang, enabledLoginProviders }) {
 
           <div className='flex flex-col items-center justify-center gap-1 mx-auto'>
             <button
-              className='w-full px-4 py-2 btn-active text-white rounded mb-3 hover:font-semibold hover:cursor-pointer'
+              className='w-full px-4 py-2 btn btn-lg btn-active text-white rounded mb-3 opacity-70 hover:font-semibold'
               type='submit'
               disabled={isSubmitting}
             >
               {submitType === 'credentials' ? (
-                <Spinner small={true} />
+                <Spinner color='text-white' />
               ) : signupRequired ? (
                 t('dashboard.login.sign-up-button')
               ) : (
@@ -239,7 +239,7 @@ function SignInForm({ t, currentLang, enabledLoginProviders }) {
                       width={25}
                       height={25}
                       src={`/images/auth-providers/dark/${p.file}`}
-                      className={`w-10 h-10 ${p?.class || ''} ${isSubmitting ? 'opacity-75' : 'opacity-60 hover:opacity-100'} hover:cursor-pointer`}
+                      className={`w-10 h-10 ${p?.class || ''} opacity-70 hover:cursor-pointer`}
                       onClick={() => {
                         setSubmitType(p.id);
                         setIsSubmitting(true);
@@ -256,7 +256,7 @@ function SignInForm({ t, currentLang, enabledLoginProviders }) {
                 return (
                   <button
                     key={index}
-                    className={`px-3 py-2 w-36 h-36 rounded ${p?.class || ''} ${isSubmitting ? 'opacity-75' : ''}`}
+                    className={`px-3 py-2 w-36 h-36 rounded ${p?.class || ''} opacity-70`}
                     onClick={() => {
                       setSubmitType(p.id);
                       setIsSubmitting(true);
@@ -269,7 +269,7 @@ function SignInForm({ t, currentLang, enabledLoginProviders }) {
                     disabled={isSubmitting}
                   >
                     {submitType === p.id ? (
-                      <Spinner small={true} />
+                      <Spinner color='text-white' />
                     ) : (
                       <span className='capitalize flex items-center gap-1'>
                         {p.id} <i className={`icon bi bi-${p.id}`}></i>

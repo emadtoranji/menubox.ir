@@ -6,7 +6,7 @@ import Loading from '@components/Loading/client';
 import ItemQuantityButton from './ItemQuantityButton';
 import ItemPrice from './ItemPrice';
 import ItemImage from '@components/ItemImage';
-AnimatedPageimport AnimatedPage from '@components/AnimatedPage';
+import AnimatedPage from '@components/AnimatedPage';
 
 export default function ItemContent({ items = [], defaultImage }) {
   const { state } = useOrder();

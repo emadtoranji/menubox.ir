@@ -7,7 +7,7 @@
     "lint": "eslint",
     "update": "npx npm-check-updates -u",
     "dev": "next dev --port 4501",
-    "build": "npm run generate && next build",
+    "build": "npx prisma generate && next build",
     "db-build-push": "dotenv -e .env.production -- prisma db push",
     "db-build-migrate": "dotenv -e .env.production -- prisma migrate deploy",
     "db-build-reset": "dotenv -e .env.production -- prisma migrate reset",
